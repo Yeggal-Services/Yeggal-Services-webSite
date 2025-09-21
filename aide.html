@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre d'aide - Yeggal</title>
+    <meta name="description" content="Trouvez rapidement des réponses à vos questions sur l'utilisation de Yeggal. Guides, FAQ et support client.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(102, 126, 234, 0.95);
+            padding: 0.5rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            transform: rotate(15deg);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(15deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+            100% { transform: translateY(0px) rotate(15deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            padding-right: 4rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+        }
+
+        .popular-searches {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .popular-searches span {
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            opacity: 0.8;
+        }
+
+        .popular-tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .popular-tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .action-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .action-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: #3498db;
+        }
+
+        .action-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .action-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .action-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            color: #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        .category-card h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+        }
+
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item a {
+            color: #555;
+            text-decoration: none;
+            padding: 0.8rem 0;
+            display: block;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .faq-item a::before {
+            content: '?';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .faq-item a:hover {
+            color: #3498db;
+            padding-left: 2rem;
+        }
+
+        /* Support Options */
+        .support-options {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .support-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .support-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .support-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .support-card p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .support-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .support-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Status Banner */
+        .status-banner {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            text-align: center;
+            color: #7f8c8d;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .search-bar {
+                font-size: 1rem;
+                padding: 0.9rem 1.3rem;
+                padding-right: 3.5rem;
+            }
+
+            .actions-grid,
+            .categories-grid,
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .popular-searches {
+                text-align: left;
+            }
+
+            .popular-tag {
+                margin: 0.2rem 0.2rem 0.2rem 0;
+            }
+        }
+
+        /* Search Results (hidden by default) */
+        .search-results {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            padding: 2rem;
+        }
+
+        .search-results.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            background: #f8f9fa;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-snippet {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Status Banner -->
+    <div class="status-banner">
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Tous les services Yeggal sont opérationnels</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">Yeggal</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="prestataire.html">Devenir prestataire</a></li>
+                <li><a href="aide.html" class="active">Aide</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Comment pouvons-nous vous aider ?</h1>
+            <p>Trouvez rapidement des réponses à vos questions ou contactez notre équipe de support</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Recherchez dans notre centre d'aide..." id="search-input">
+                <button class="search-btn" onclick="searchHelp()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+        
+
+        <div class="popular-searches">
+            <span>Recherches populaires :</span>
+            <a href="#" class="popular-tag" onclick="searchFor('comment créer un compte')">Créer un compte</a>
+            <a href="#" class="popular-tag" onclick="searchFor('paiement sécurisé')">Paiements</a>
+            <a href="#" class="popular-tag" onclick="searchFor('annuler une commande')">Annulation</a>
+            <a href="#" class="popular-tag" onclick="searchFor('devenir prestataire')">Devenir prestataire</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Explorez nos catégories pour trouver des réponses détaillées</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Compte et inscription</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('create-account')">Comment créer un compte sur Yeggal ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('verify-account')">Comment vérifier mon compte ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('forgot-password')">J'ai oublié mon mot de passe</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('update-profile')">Comment modifier mes informations ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('delete-account')">Comment supprimer mon compte ?</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Services et réservations</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('find-provider')">Comment trouver un prestataire ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('book-service')">Comment réserver un service ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('cancel-booking')">Comment annuler une réservation ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('reschedule')">Comment reprogrammer un service ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('service-guarantee')">Quelles sont les garanties ?</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Paiements et tarifs</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('payment-methods')">Quels modes de paiement acceptez-vous ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('secure-payment')">Les paiements sont-ils sécurisés ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('pricing')">Comment sont fixés les prix ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('refund')">Comment obtenir un remboursement ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('commission')">Quelle est votre commission ?</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Avis et évaluations</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('leave-review')">Comment laisser un avis ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('modify-review')">Puis-je modifier mon avis ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('fake-reviews')">Comment signalez un faux avis ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('rating-system')">Comment fonctionne le système de notes ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('response-review')">Les prestataires peuvent-ils répondre aux avis ?</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Application mobile</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('download-app')">Où télécharger l'application ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('app-features')">Quelles sont les fonctionnalités de l'app ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('app-problems')">Problèmes avec l'application</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('notifications')">Comment gérer les notifications ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('offline-mode')">L'app fonctionne-t-elle hors ligne ?</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Pour les prestataires</h3>
+                    </div>
+                    <ul class="faq-list">
+                        <li class="faq-item"><a href="#" onclick="showAnswer('become-provider')">Comment devenir prestataire ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('verification-process')">Processus de vérification</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('set-prices')">Comment fixer mes tarifs ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('get-more-clients')">Comment obtenir plus de clients ?</a></li>
+                        <li class="faq-item"><a href="#" onclick="showAnswer('provider-fees')">Quels sont les frais ?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="support-options">
+        <div class="container">
+            <h2 class="section-title">Besoin d'aide personnalisée ?</h2>
+            <p class="section-subtitle">Notre équipe de support est là pour vous accompagner</p>
+            
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3><i class="fas fa-comments"></i> Chat en direct</h3>
+                    <p>Obtenez une réponse immédiate de notre équipe de support en ligne</p>
+                    <a href="#" class="support-btn" onclick="openChat()">Démarrer une conversation</a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                        <i class="fas fa-clock"></i> Disponible 9h-18h, Lun-Ven
+                    </p>
+                </div>
+
+                <div class="support-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>Envoyez-nous vos questions détaillées par email</p>
+                    <a href="mailto:support@yeggal.sn" class="support-btn">Envoyer un email</a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                        <i class="fas fa-reply"></i> Réponse sous 24h
+                    </p>
+                </div>
+
+                <div class="support-card">
+                    <h3><i class="fas fa-phone"></i> Téléphone</h3>
+                    <p>Appelez-nous pour une assistance immédiate</p>
+                    <a href="tel:+221771234567" class="support-btn">+221 77 123 45 67</a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                        <i class="fas fa-phone-volume"></i> 9h-17h, Lun-Ven
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Search Results (Hidden by default) -->
+    <div class="container">
+        <div class="search-results" id="search-results">
+            <h3>Résultats de recherche</h3>
+            <div id="results-container"></div>
+        </div>
+    </div>
+    
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <h2 class="section-title">Actions rapides</h2>
+            <p class="section-subtitle">Accédez directement aux informations les plus importantes</p>
+            
+            <div class="actions-grid">
+                <a href="#" class="action-card" onclick="showGuide('client')">
+                    <div class="action-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Guide Client</h3>
+                    <p>Découvrez comment utiliser Yeggal pour trouver des prestataires de qualité</p>
+                </a>
+
+                <a href="#" class="action-card" onclick="showGuide('prestataire')">
+                    <div class="action-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Guide Prestataire</h3>
+                    <p>Apprenez à optimiser votre profil et développer votre activité</p>
+                </a>
+
+                                <a href="#" class="action-card" onclick="showGuide('paiement')">
+                    <div class="action-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Paiements & Facturation</h3>
+                    <p>Tout savoir sur les modes de paiement, commissions et remboursements</p>
+                </a>
+
+                <a href="#" class="action-card" onclick="showGuide('securite')">
+                    <div class="action-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sécurité</h3>
+                    <p>Conseils pour utiliser Yeggal en toute sécurité et signaler un problème</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <!-- ... existing FAQ categories section ... -->
+    </section>
+
+    <!-- Support Options -->
+    <section class="support-options">
+        <!-- ... existing support options section ... -->
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Centre d'aide</h3>
+                <a href="#">Guide de démarrage</a><br>
+                <a href="#">FAQ complète</a><br>
+                <a href="#">Vidéos tutoriels</a><br>
+                <a href="#">Signaler un problème</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#">Contacter le support</a><br>
+                <a href="#">État des services</a><br>
+                <a href="#">Communauté</a><br>
+                <a href="#">Formation prestataires</a>
+            </div>
+            <div class="footer-section">
+                <h3>Ressources</h3>
+                <a href="blog.html">Blog</a><br>
+                <a href="#">Conseils sécurité</a><br>
+                <a href="#">Meilleures pratiques</a><br>
+                <a href="#">Outils marketing</a>
+            </div>
+            <div class="footer-section">
+                <h3>Yeggal</h3>
+                <a href="apropos.html">À propos</a><br>
+                <a href="conditions.html">Conditions d'utilisation</a><br>
+                <a href="confidentialite.html">Confidentialité</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yeggal. Tous droits réservés. | Nous sommes là pour vous aider 🤝</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample FAQ data
+        const faqData = {
+            'create-account': {
+                question: 'Comment créer un compte sur Yeggal ?',
+                answer: `Pour créer votre compte Yeggal :
+                1. Téléchargez l'application ou rendez-vous sur notre site web
+                2. Cliquez sur "S'inscrire"
+                3. Remplissez vos informations : nom, email, téléphone
+                4. Vérifiez votre email en cliquant sur le lien reçu
+                5. Complétez votre profil selon votre rôle (client ou prestataire)
+                
+                L'inscription est gratuite et ne prend que quelques minutes !`
+            },
+            'verify-account': {
+                question: 'Comment vérifier mon compte ?',
+                answer: `La vérification de votre compte se fait en plusieurs étapes :
+                1. Vérification email : cliquez sur le lien reçu dans votre boîte mail
+                2. Vérification téléphone : saisissez le code SMS reçu
+                3. Pour les prestataires : envoyez vos documents (CNI, certificats)
+                
+                La vérification complète prend 24-48h pour les prestataires.`
+            },
+            'find-provider': {
+                question: 'Comment trouver un prestataire ?',
+                answer: `Pour trouver le prestataire idéal :
+                1. Utilisez la barre de recherche ou parcourez les catégories
+                2. Utilisez les filtres : localisation, prix, disponibilité, notes
+                3. Consultez les profils, avis clients et portfolios
+                4. Comparez les devis et délais proposés
+                5. Contactez directement les prestataires via le chat
+                
+                Notre algorithme vous propose les meilleurs prestataires près de chez vous !`
+            },
+            'payment-methods': {
+                question: 'Quels modes de paiement acceptez-vous ?',
+                answer: `Yeggal accepte plusieurs modes de paiement sécurisés :
+                • Mobile Money : Orange Money, Free Money
+                • Cartes bancaires : Visa, Mastercard
+                • Virements bancaires
+                • Paiement en espèces (selon accord avec le prestataire)
+                
+                Tous les paiements électroniques sont chiffrés et sécurisés.`
+            },
+            'become-provider': {
+                question: 'Comment devenir prestataire ?',
+                answer: `Pour rejoindre notre réseau de prestataires :
+                1. Inscrivez-vous en choisissant "Prestataire"
+                2. Complétez votre profil professionnel détaillé
+                3. Ajoutez vos compétences, expérience et portfolio
+                4. Envoyez vos documents de vérification
+                5. Attendez la validation (24-48h)
+                6. Commencez à recevoir des demandes de clients !
+                
+                L'inscription est gratuite, nous ne prenons qu'une commission de 10% sur vos prestations.`
+            }
+        };
+
+        // Search functionality
+        function searchHelp() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            if (!query) return;
+
+            const resultsContainer = document.getElementById('results-container');
+            const searchResults = document.getElementById('search-results');
+            
+            // Simple search in FAQ data
+            const results = [];
+            for (const [key, data] of Object.entries(faqData)) {
+                if (data.question.toLowerCase().includes(query) || 
+                    data.answer.toLowerCase().includes(query)) {
+                    results.push(data);
+                }
+            }
+
+            // Display results
+            if (results.length > 0) {
+                resultsContainer.innerHTML = results.map(result => `
+                    <div class="result-item">
+                        <div class="result-title">${result.question}</div>
+                        <div class="result-snippet">${result.answer.substring(0, 150)}...</div>
+                    </div>
+                `).join('');
+            } else {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>Aucun résultat trouvé</h3>
+                        <p>Essayez avec d'autres mots-clés ou contactez notre support</p>
+                    </div>
+                `;
+            }
+
+            searchResults.classList.add('active');
+            searchResults.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchFor(query) {
+            document.getElementById('search-input').value = query;
+            searchHelp();
+        }
+
+        // Enter key search
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchHelp();
+            }
+        });
+
+        // Show answer function
+        function showAnswer(questionKey) {
+            const data = faqData[questionKey];
+            if (data) {
+                alert(`${data.question}\n\n${data.answer}`);
+                // In a real implementation, this would show a modal or navigate to a detailed page
+            }
+        }
+
+        // Guide functions
+        function showGuide(type) {
+            const guides = {
+                'client': 'Guide complet pour les clients : création de compte, recherche de prestataires, réservation de services...',
+                'prestataire': 'Guide complet pour les prestataires : inscription, optimisation du profil, gestion des demandes...',
+                'paiement': 'Guide des paiements : modes acceptés, sécurité, remboursements, facturation...',
+                'securite': 'Guide sécurité : protection des données, signalement, bonnes pratiques...'
+            };
+            
+            alert(guides[type] || 'Guide non disponible');
+            // In a real implementation, this would open the appropriate guide page
+        }
+
+        // Chat function
+        function openChat() {
+            alert('Chat en direct non disponible en mode démonstration.\nContactez-nous à support@yeggal.sn');
+            // In a real implementation, this would open a live chat widget
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            console.log('Mobile menu toggled');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Auto-focus search bar on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Don't auto-focus on mobile to prevent keyboard popup
+            if (window.innerWidth > 768) {
+                setTimeout(() => {
+                    document.getElementById('search-input').focus();
+                }, 500);
+            }
+        });
+    </script>
+   
+
+    <script>
+        // Existing script code...
+
+        // Additional functionality for FAQ items
+        document.querySelectorAll('.faq-item a').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const questionKey = item.getAttribute('onclick').match(/'(.*?)'/)[1];
+                showAnswer(questionKey);
+            });
+        });
+
+        // Enhance search functionality with keyboard navigation
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keydown', function(e) {
+            const results = document.querySelectorAll('.result-item');
+            if (results.length) {
+                let currentFocus = -1;
+
+                if (e.key === 'ArrowDown') {
+                    currentFocus++;
+                    addActive(results, currentFocus);
+                } else if (e.key === 'ArrowUp') {
+                    currentFocus--;
+                    addActive(results, currentFocus);
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        results[currentFocus].click();
+                    }
+                }
+            }
+        });
+
+        function addActive(results, index) {
+            if (!results) return false;
+            removeActive(results);
+            if (index >= results.length) index = 0;
+            if (index < 0) index = results.length - 1;
+            results[index].classList.add('active');
+        }
+
+        function removeActive(results) {
+            results.forEach(result => {
+                result.classList.remove('active');
+            });
+        }
+
+        // Add smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu functionality
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Initialize search results container
+            if (!document.getElementById('search-results')) {
+                const resultsContainer = document.createElement('div');
+                resultsContainer.id = 'search-results';
+                resultsContainer.className = 'search-results';
+                document.querySelector('.container').appendChild(resultsContainer);
+            }
+        });
+
+      
+    </script>
+</body>
+</html>
