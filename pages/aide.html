@@ -6,6 +6,7 @@
     <title>Centre d'aide - Yeggal</title>
     <meta name="description" content="Trouvez rapidement des réponses à vos questions sur l'utilisation de Yeggal. Guides, FAQ et support client.">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="../style/aide.css">
     <style>
         * {
             margin: 0;
@@ -30,6 +31,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -152,6 +154,7 @@
             font-size: 1.1rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             background: rgba(255,255,255,0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -654,8 +657,8 @@
                 <li><a href="aide.html" class="active">Aide</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
@@ -802,7 +805,7 @@
                     <h3><i class="fas fa-comments"></i> Chat en direct</h3>
                     <p>Obtenez une réponse immédiate de notre équipe de support en ligne</p>
                     <a href="#" class="support-btn" onclick="openChat()">Démarrer une conversation</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    <p class="support-note">
                         <i class="fas fa-clock"></i> Disponible 9h-18h, Lun-Ven
                     </p>
                 </div>
@@ -811,7 +814,7 @@
                     <h3><i class="fas fa-envelope"></i> Email</h3>
                     <p>Envoyez-nous vos questions détaillées par email</p>
                     <a href="mailto:support@yeggal.sn" class="support-btn">Envoyer un email</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    <p class="support-note">
                         <i class="fas fa-reply"></i> Réponse sous 24h
                     </p>
                 </div>
@@ -820,7 +823,7 @@
                     <h3><i class="fas fa-phone"></i> Téléphone</h3>
                     <p>Appelez-nous pour une assistance immédiate</p>
                     <a href="tel:+221771234567" class="support-btn">+221 77 123 45 67</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    <p class="support-note">
                         <i class="fas fa-phone-volume"></i> 9h-17h, Lun-Ven
                     </p>
                 </div>

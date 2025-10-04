@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeggal - Connecter clients et prestataires à Dakar</title>
+    <meta name="description" content="Trouvez rapidement des prestataires de confiance à Dakar. Services de qualité, vérifiés et à proximité.">
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Yeggal</div>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#fonctionnement">Comment ça marche</a></li>
+                <li><a href="prestataire.html">Devenir prestataire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#fonctionnement">Comment ça marche</a></li>
+                <li><a href="prestataire.html">Devenir prestataire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>Trouvez des prestataires de confiance à Dakar</h1>
+            <p>Connectez-vous facilement avec des professionnels vérifiés dans votre quartier. Rapide, sécurisé et transparent.</p>
+            
+            <div class="download-buttons">
+                <a href="#" class="download-btn" id="android-download">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">Google Play</span>
+                    </div>
+                </a>
+                <a href="#" class="download-btn" id="ios-download">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="cta-secondary">
+                <a href="prestataire.html" class="btn btn-outline">
+                    <i class="fas fa-user-tie"></i>
+                    Devenir prestataire
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Yeggal ?</h2>
+            <p class="section-subtitle">Une plateforme conçue pour simplifier vos recherches de services et garantir votre satisfaction</p>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Prestataires vérifiés</h3>
+                    <p>Tous nos prestataires sont vérifiés avec documents et références. Travaillez en toute confiance avec des professionnels qualifiés.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Service rapide</h3>
+                    <p>Trouvez un prestataire en quelques minutes. Réponses dans la journée garanties pour tous vos besoins urgents.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-map-marker-alt feature-icon"></i>
+                    <h3>Proximité</h3>
+                    <p>Des prestataires dans votre quartier. Réduisez les délais et les frais de déplacement pour un service plus efficace.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-comments feature-icon"></i>
+                    <h3>Communication directe</h3>
+                    <p>Chattez directement avec les prestataires. Négociez et organisez votre service facilement via notre système de messagerie intégré.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-star feature-icon"></i>
+                    <h3>Avis clients</h3>
+                    <p>Consultez les avis et notes des autres clients pour faire le meilleur choix. Système de notation transparent et fiable.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>App mobile</h3>
+                    <p>Interface simple et intuitive. Accessible même avec une connexion faible. Disponible sur iOS et Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works animate-on-scroll" id="fonctionnement">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <p class="section-subtitle">En quelques étapes simples, trouvez le prestataire idéal pour vos besoins</p>
+            <div class="steps">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Décrivez votre besoin</h3>
+                    <p>Publiez votre demande en détaillant le service recherché, votre localisation et votre budget.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>Recevez des propositions</h3>
+                    <p>Les prestataires qualifiés vous contactent avec leurs devis personnalisés en quelques heures.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Choisissez et planifiez</h3>
+                    <p>Comparez les profils, lisez les avis et choisissez le prestataire qui vous convient le mieux.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Service réalisé</h3>
+                    <p>Le prestataire réalise votre service. Évaluez la prestation pour aider la communauté.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services animate-on-scroll" id="services">
+        <div class="container">
+            <h2 class="section-title">Services disponibles</h2>
+            <p class="section-subtitle">Plus de 50 catégories de services pour répondre à tous vos besoins du quotidien</p>
+            <div class="services-grid">
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-wrench"></i>
+                    <h4>Plomberie</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Électricité</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-broom"></i>
+                    <h4>Ménage</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Réparation téléphone</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-car"></i>
+                    <h4>Mécanique</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-cut"></i>
+                    <h4>Couture</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Peinture</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Informatique</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-home"></i>
+                    <h4>Jardinage</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Traiteur</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-camera"></i>
+                    <h4>Photographie</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-hammer"></i>
+                    <h4>Menuiserie</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats animate-on-scroll">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="prestataires-count">0</h3>
+                    <p>Prestataires actifs</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="services-count">0</h3>
+                    <p>Services réalisés</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="clients-count">0</h3>
+                    <p>Clients satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="quartiers-count">0</h3>
+                    <p>Quartiers couverts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section class="testimonials animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Ils nous font confiance</h2>
+            <p class="section-subtitle">Découvrez les témoignages de nos utilisateurs satisfaits</p>
+            <div class="testimonial-slider">
+                <div class="testimonial animate-on-scroll">
+                    <p class="testimonial-text">"Grâce à Yeggal, j'ai trouvé un excellent plombier en moins de 2 heures. Service rapide et prestataire très professionnel. Je recommande vivement !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Aminata Mbaye</h4>
+                            <p>Cliente - Almadies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta-section animate-on-scroll">
+        <div class="container">
+            <h2>Prêt à commencer ?</h2>
+            <p>Rejoignez des milliers d'utilisateurs qui font confiance à Yeggal pour leurs besoins quotidiens</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">Google Play</span>
+                    </div>
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yeggal</h3>
+                    <p>La plateforme de référence pour trouver des prestataires de confiance à Dakar. Simplifiez vos recherches, économisez votre temps.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <!-- <a href="#">Pour les clients</a><br> -->
+                    <a href="prestataire.html">Pour les prestataires</a><br>
+                    <!-- <a href="#">Support</a><br>
+                    <a href="#">FAQ</a><br>
+                    <a href="#">Guide d'utilisation</a> -->
+                </div>
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <a href="conditions.html">Conditions d'utilisation</a><br>
+                    <a href="confidentialite.html">Politique de confidentialité</a><br>
+                    <!-- <a href="#">Mentions légales</a><br>
+                    <a href="#">Politique de remboursement</a><br>
+                    <a href="#">Charte de qualité</a> -->
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +221 77 XXX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> contact@yeggal.sn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</p>
+                    <p><i class="fas fa-clock"></i> Lun-Ven: 8h-18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yeggal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loading').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const scrollTop = document.getElementById('scroll-top');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            let current = start;
+            let increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Special handling for stats section
+                    if (entry.target.classList.contains('stats')) {
+                        animateCounter(document.getElementById('prestataires-count'), 50);
+                        animateCounter(document.getElementById('services-count'), 100);
+                        animateCounter(document.getElementById('clients-count'), 150);
+                        animateCounter(document.getElementById('quartiers-count'), 35);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-nav').classList.remove('active');
+                }
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Download button click handlers
+        document.getElementById('android-download').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add your Google Play Store link here
+            console.log('Redirecting to Google Play Store...');
+        });
+
+        document.getElementById('ios-download').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add your App Store link here
+            console.log('Redirecting to App Store...');
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

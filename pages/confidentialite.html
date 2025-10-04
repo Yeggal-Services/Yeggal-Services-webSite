@@ -1,5 +1,5 @@
 
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -7,586 +7,7 @@
     <title>Politique de Confidentialité - Yeggal</title>
     <meta name="description" content="Découvrez comment Yeggal protège vos données personnelles et respecte votre vie privée sur notre plateforme.">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            background: rgba(102, 126, 234, 0.95);
-            padding: 0.5rem 0;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
-            color: white;
-            padding: 120px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 200%;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
-            transform: rotate(15deg);
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(15deg); }
-            50% { transform: translateY(-20px) rotate(15deg); }
-            100% { transform: translateY(0px) rotate(15deg); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .privacy-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .breadcrumb {
-            background: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .breadcrumb-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .breadcrumb a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: #764ba2;
-        }
-
-        .breadcrumb i {
-            font-size: 0.8rem;
-            color: #999;
-        }
-
-        /* Main Content */
-        .main-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            background: white;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .last-updated {
-            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
-            border-left: 4px solid #4caf50;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-            border-radius: 0 10px 10px 0;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .last-updated strong {
-            color: #2e7d32;
-        }
-
-        .table-of-contents {
-            background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 2px solid #e9ecef;
-        }
-
-        .table-of-contents h2 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toc-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0.5rem;
-        }
-
-        .toc-list li {
-            padding-left: 0;
-        }
-
-        .toc-list a {
-            color: #4caf50;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: block;
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: 1px solid transparent;
-        }
-
-        .toc-list a:hover {
-            background: rgba(76, 175, 80, 0.1);
-            border-color: rgba(76, 175, 80, 0.3);
-            transform: translateX(5px);
-        }
-
-        .section {
-            margin-bottom: 3rem;
-            scroll-margin-top: 100px;
-        }
-
-        .section h2 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #4caf50;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section h3 {
-            color: #34495e;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-
-        .section h4 {
-            color: #555;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            margin-top: 1.5rem;
-        }
-
-        .section p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        .section ul, .section ol {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-        }
-
-        .section li {
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #fff3e0, #fce4ec);
-            border-left: 4px solid #ff6b6b;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .highlight-box h4 {
-            color: #d32f2f;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
-            border-left: 4px solid #4caf50;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .info-box h4 {
-            color: #2e7d32;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .warning-box {
-            background: linear-gradient(135deg, #fff8e1, #ffeaa7);
-            border-left: 4px solid #ff9800;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .warning-box h4 {
-            color: #ef6c00;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .data-table th,
-        .data-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .data-table th {
-            background: linear-gradient(135deg, #4caf50, #8bc34a);
-            color: white;
-            font-weight: 600;
-        }
-
-        .data-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .data-table tr:hover {
-            background: rgba(76, 175, 80, 0.05);
-        }
-
-        .rights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .right-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #4caf50;
-            transition: all 0.3s ease;
-        }
-
-        .right-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .right-card h4 {
-            color: #2e7d32;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .right-card i {
-            font-size: 1.3rem;
-            color: #4caf50;
-        }
-
-        .contact-section {
-            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .contact-section h2 {
-            border: none;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item i {
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 50px 0 30px;
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-        }
-
-    .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #3498db;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #bdc3c7;
-            text-decoration: none;
-            line-height: 1.8;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #3498db;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #34495e;
-            padding-top: 2rem;
-            text-align: center;
-            color: #7f8c8d;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #4caf50, #8bc34a);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .main-content {
-                padding: 2rem 1rem;
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
-
-            .table-of-contents {
-                padding: 1.5rem;
-            }
-
-            .toc-list {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .breadcrumb-content {
-                padding: 0 1rem;
-            }
-
-            .rights-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .data-table {
-                font-size: 0.9rem;
-            }
-
-            .data-table th,
-            .data-table td {
-                padding: 0.7rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../style/confidentialite.css">
 </head>
 <body>
     <!-- Header -->
@@ -600,8 +21,8 @@
                 <li><a href="aide.html">Aide</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
@@ -609,10 +30,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1><i class="fas fa-shield-alt"></i> Politique de Confidentialité</h1>
+            <h1><i class="fas fa-shield-alt" aria-hidden="true"></i> Politique de Confidentialité</h1>
             <p>Votre vie privée est importante pour nous. Découvrez comment nous protégeons vos données personnelles.</p>
             <div class="privacy-badge">
-                <i class="fas fa-lock"></i>
+                <i class="fas fa-lock" aria-hidden="true"></i>
                 <span>Données protégées et sécurisées</span>
             </div>
         </div>
@@ -622,7 +43,7 @@
     <div class="breadcrumb">
         <div class="breadcrumb-content">
             <a href="index.html">Accueil</a>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
             <span>Politique de Confidentialité</span>
         </div>
     </div>
@@ -637,7 +58,7 @@
 
         <!-- Table of Contents -->
         <div class="table-of-contents">
-            <h2><i class="fas fa-list-ul"></i> Sommaire</h2>
+            <h2><i class="fas fa-list-ul" aria-hidden="true"></i> Sommaire</h2>
             <ul class="toc-list">
                 <li><a href="#introduction">1. Introduction</a></li>
                 <li><a href="#donnees-collectees">2. Données collectées</a></li>
@@ -656,11 +77,11 @@
 
         <!-- Sections -->
         <section id="introduction" class="section">
-            <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+            <h2><i class="fas fa-info-circle" aria-hidden="true"></i> 1. Introduction</h2>
             <p>Yeggal s'engage à protéger et respecter votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, partageons et protégeons vos informations personnelles lorsque vous utilisez notre plateforme de mise en relation entre clients et prestataires de services.</p>
             
             <div class="info-box">
-                <h4><i class="fas fa-heart"></i> Notre engagement</h4>
+                <h4><i class="fas fa-heart" aria-hidden="true"></i> Notre engagement</h4>
                 <p>Chez Yeggal, la protection de vos données personnelles est une priorité absolue. Nous nous engageons à être transparents sur nos pratiques et à vous donner le contrôle sur vos informations.</p>
             </div>
 
@@ -678,7 +99,7 @@
         </section>
 
         <section id="donnees-collectees" class="section">
-            <h2><i class="fas fa-database"></i> 2. Données collectées</h2>
+            <h2><i class="fas fa-database" aria-hidden="true"></i> 2. Données collectées</h2>
             <p>Nous collectons différents types de données selon votre utilisation de notre plateforme :</p>
 
             <h3>2.1 Données que vous nous fournissez directement</h3>
@@ -739,13 +160,13 @@
             </ul>
 
             <div class="warning-box">
-                <h4><i class="fas fa-exclamation-triangle"></i> Données sensibles</h4>
+                <h4><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Données sensibles</h4>
                 <p>Nous ne collectons pas intentionnellement de données sensibles (origine ethnique, opinions politiques, santé, etc.). Si vous partagez ces informations, nous les supprimerons dès que nous en prendrons connaissance.</p>
             </div>
         </section>
 
         <section id="utilisation-donnees" class="section">
-            <h2><i class="fas fa-cogs"></i> 3. Utilisation des données</h2>
+            <h2><i class="fas fa-cogs" aria-hidden="true"></i> 3. Utilisation des données</h2>
             <p>Nous utilisons vos données personnelles pour les finalités suivantes :</p>
 
             <h3>3.1 Fourniture et amélioration de nos services</h3>
@@ -774,13 +195,13 @@
             </ul>
 
             <div class="info-box">
-                <h4><i class="fas fa-balance-scale"></i> Base légale</h4>
+                <h4><i class="fas fa-balance-scale" aria-hidden="true"></i> Base légale</h4>
                 <p>Nous traitons vos données sur la base de votre consentement, de l'exécution de notre contrat avec vous, de nos intérêts légitimes ou pour respecter une obligation légale.</p>
             </div>
         </section>
 
         <section id="partage-donnees" class="section">
-            <h2><i class="fas fa-share-alt"></i> 4. Partage des données</h2>
+            <h2><i class="fas fa-share-alt" aria-hidden="true"></i> 4. Partage des données</h2>
             <p>Nous ne vendons jamais vos données personnelles. Nous pouvons les partager dans les cas suivants :</p>
 
             <h3>4.1 Avec d'autres utilisateurs</h3>
@@ -802,7 +223,7 @@
             </ul>
 
             <div class="highlight-box">
-                <h4><i class="fas fa-handshake"></i> Contrôle des prestataires</h4>
+                <h4><i class="fas fa-handshake" aria-hidden="true"></i> Contrôle des prestataires</h4>
                 <p>Tous nos prestataires de services sont contractuellement tenus de protéger vos données et de les utiliser uniquement pour les services qu'ils nous fournissent.</p>
             </div>
 
@@ -820,7 +241,7 @@
         </section>
 
         <section id="conservation-donnees" class="section">
-            <h2><i class="fas fa-archive"></i> 5. Conservation des données</h2>
+            <h2><i class="fas fa-archive" aria-hidden="true"></i> 5. Conservation des données</h2>
             <p>Nous conservons vos données personnelles aussi longtemps que nécessaire pour fournir nos services et respecter nos obligations légales.</p>
 
             <h3>5.1 Durées de conservation</h3>
@@ -862,13 +283,13 @@
             </table>
 
             <div class="info-box">
-                <h4><i class="fas fa-trash-alt"></i> Suppression automatique</h4>
+                <h4><i class="fas fa-trash-alt" aria-hidden="true"></i> Suppression automatique</h4>
                 <p>Nous avons mis en place des processus automatiques pour supprimer vos données lorsque les durées de conservation sont atteintes.</p>
             </div>
         </section>
 
         <section id="securite-donnees" class="section">
-            <h2><i class="fas fa-lock"></i> 6. Sécurité des données</h2>
+            <h2><i class="fas fa-lock" aria-hidden="true"></i> 6. Sécurité des données</h2>
             <p>Nous mettons en œuvre des mesures de sécurité robustes pour protéger vos données personnelles :</p>
 
             <h3>6.1 Mesures techniques</h3>
@@ -888,7 +309,7 @@
             </ul>
 
             <div class="warning-box">
-                <h4><i class="fas fa-exclamation-triangle"></i> Votre responsabilité</h4>
+                <h4><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Votre responsabilité</h4>
                 <p>Vous êtes responsable de la sécurité de vos identifiants. Utilisez un mot de passe fort, ne le partagez jamais et contactez-nous immédiatement en cas d'activité suspecte.</p>
             </div>
 
@@ -903,32 +324,32 @@
         </section>
 
         <section id="vos-droits" class="section">
-            <h2><i class="fas fa-user-shield"></i> 7. Vos droits</h2>
+            <h2><i class="fas fa-user-shield" aria-hidden="true"></i> 7. Vos droits</h2>
             <p>Vous disposez de plusieurs droits concernant vos données personnelles :</p>
 
             <div class="rights-grid">
                 <div class="right-card">
-                    <h4><i class="fas fa-eye"></i> Droit d'accès</h4>
+                    <h4><i class="fas fa-eye" aria-hidden="true"></i> Droit d'accès</h4>
                     <p>Vous pouvez demander une copie de toutes les données personnelles que nous détenons sur vous.</p>
                 </div>
                 <div class="right-card">
-                    <h4><i class="fas fa-edit"></i> Droit de rectification</h4>
+                    <h4><i class="fas fa-edit" aria-hidden="true"></i> Droit de rectification</h4>
                     <p>Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
                 </div>
                 <div class="right-card">
-                    <h4><i class="fas fa-trash"></i> Droit à l'effacement</h4>
+                    <h4><i class="fas fa-trash" aria-hidden="true"></i> Droit à l'effacement</h4>
                     <p>Vous pouvez demander la suppression de vos données dans certains cas.</p>
                 </div>
                 <div class="right-card">
-                    <h4><i class="fas fa-pause"></i> Droit à la limitation</h4>
+                    <h4><i class="fas fa-pause" aria-hidden="true"></i> Droit à la limitation</h4>
                     <p>Vous pouvez demander la suspension du traitement de vos données.</p>
                 </div>
                 <div class="right-card">
-                    <h4><i class="fas fa-download"></i> Droit à la portabilité</h4>
+                    <h4><i class="fas fa-download" aria-hidden="true"></i> Droit à la portabilité</h4>
                     <p>Vous pouvez récupérer vos données dans un format structuré.</p>
                 </div>
                 <div class="right-card">
-                    <h4><i class="fas fa-ban"></i> Droit d'opposition</h4>
+                    <h4><i class="fas fa-ban" aria-hidden="true"></i> Droit d'opposition</h4>
                     <p>Vous pouvez vous opposer au traitement de vos données.</p>
                 </div>
             </div>
@@ -943,7 +364,7 @@
             </ul>
 
             <div class="info-box">
-                <h4><i class="fas fa-clock"></i> Délais de réponse</h4>
+                <h4><i class="fas fa-clock" aria-hidden="true"></i> Délais de réponse</h4>
                 <p>Nous répondons à vos demandes dans un délai de 30 jours maximum. Pour les demandes complexes, nous pouvons prolonger ce délai de 60 jours supplémentaires en vous en informant.</p>
             </div>
 
@@ -952,7 +373,7 @@
         </section>
 
         <section id="cookies" class="section">
-            <h2><i class="fas fa-cookie-bite"></i> 8. Cookies et technologies similaires</h2>
+            <h2><i class="fas fa-cookie-bite" aria-hidden="true"></i> 8. Cookies et technologies similaires</h2>
             <p>Nous utilisons des cookies et technologies similaires pour améliorer votre expérience et analyser l'utilisation de notre plateforme.</p>
 
             <h3>8.1 Types de cookies utilisés</h3>
@@ -1004,7 +425,7 @@
         </section>
 
         <section id="transferts-internationaux" class="section">
-            <h2><i class="fas fa-globe"></i> 9. Transferts internationaux</h2>
+            <h2><i class="fas fa-globe" aria-hidden="true"></i> 9. Transferts internationaux</h2>
             <p>Certains de nos prestataires de services peuvent être situés en dehors du Sénégal. Nous nous assurons que vos données bénéficient d'un niveau de protection adéquat.</p>
 
             <h3>9.1 Garanties mises en place</h3>
@@ -1016,17 +437,17 @@
             </ul>
 
             <div class="info-box">
-                <h4><i class="fas fa-shield-alt"></i> Protection garantie</h4>
+                <h4><i class="fas fa-shield-alt" aria-hidden="true"></i> Protection garantie</h4>
                 <p>Nous ne transférons vos données à l'international que si c'est nécessaire pour nos services et avec des garanties appropriées pour votre protection.</p>
             </div>
         </section>
 
         <section id="mineurs" class="section">
-            <h2><i class="fas fa-child"></i> 10. Protection des mineurs</h2>
+            <h2><i class="fas fa-child" aria-hidden="true"></i> 10. Protection des mineurs</h2>
             <p>Notre service n'est pas destiné aux personnes de moins de 18 ans. Nous ne collectons pas intentionnellement de données personnelles auprès des mineurs.</p>
 
             <div class="warning-box">
-                <h4><i class="fas fa-exclamation-triangle"></i> Si vous êtes parent</h4>
+                <h4><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Si vous êtes parent</h4>
                 <p>Si vous pensez que votre enfant nous a fourni des données personnelles, contactez-nous immédiatement. Nous supprimerons ces données dans les plus brefs délais.</p>
             </div>
 
@@ -1040,7 +461,7 @@
         </section>
 
         <section id="modifications" class="section">
-            <h2><i class="fas fa-edit"></i> 11. Modifications de cette politique</h2>
+            <h2><i class="fas fa-edit" aria-hidden="true"></i> 11. Modifications de cette politique</h2>
             <p>Nous pouvons modifier cette Politique de Confidentialité pour refléter les changements dans nos pratiques ou pour des raisons légales.</p>
 
             <h3>11.1 Notification des changements</h3>
@@ -1057,27 +478,27 @@
         </section>
 
         <section id="contact-donnees" class="section">
-            <h2><i class="fas fa-envelope"></i> 12. Nous contacter</h2>
+            <h2><i class="fas fa-envelope" aria-hidden="true"></i> 12. Nous contacter</h2>
             <p>Pour toute question concernant cette Politique de Confidentialité ou le traitement de vos données personnelles :</p>
 
             <div class="contact-section">
-                <h2><i class="fas fa-user-shield"></i> Délégué à la Protection des Données</h2>
+                <h2><i class="fas fa-user-shield" aria-hidden="true"></i> Délégué à la Protection des Données</h2>
                 <p>Notre équipe dédiée à la protection de vos données est à votre écoute</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <span>privacy@yeggal.sn</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <span>+221 77 XXX XX XX</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <span>Dakar, Sénégal</span>
                     </div>
                 </div>
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
+                <p class="response-time-note">
                     <strong>Délais de réponse :</strong> 24h pour les demandes urgentes, 72h pour les autres demandes
                 </p>
             </div>
@@ -1132,8 +553,8 @@
     </footer>
 
     <!-- Scroll to top button -->
-    <div class="scroll-top" id="scroll-top">
-        <i class="fas fa-chevron-up"></i>
+    <div class="scroll-top" id="scroll-top" role="button" aria-label="Retour en haut" title="Retour en haut" tabindex="0">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </div>
 
     <script>
@@ -1214,30 +635,27 @@
             if (!localStorage.getItem('privacy-accepted')) {
                 setTimeout(() => {
                     const banner = document.createElement('div');
-                    banner.style.cssText = `
-                        position: fixed;
-                        bottom: 20px;
-                        left: 20px;
-                        right: 20px;
-                        background: linear-gradient(135deg, #4caf50, #8bc34a);
-                        color: white;
-                        padding: 1rem;
-                        border-radius: 10px;
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-                        z-index: 10000;
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                        font-size: 0.9rem;
-                    `;
-                    banner.innerHTML = `
-                        <i class="fas fa-shield-alt" style="font-size: 1.5rem;"></i>
-                        <span style="flex: 1;">Nous respectons votre vie privée. Cette page explique comment nous protégeons vos données.</span>
-                        <button onclick="this.parentElement.remove(); localStorage.setItem('privacy-accepted', 'true');" 
-                                style="background: rgba(255,255,255,0.2); border: none; color: white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">
-                            J'ai compris
-                        </button>
-                    `;
+                    banner.className = 'privacy-banner';
+
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-shield-alt privacy-banner-icon';
+                    icon.setAttribute('aria-hidden', 'true');
+
+                    const text = document.createElement('span');
+                    text.className = 'privacy-banner-text';
+                    text.textContent = 'Nous respectons votre vie privée. Cette page explique comment nous protégeons vos données.';
+
+                    const button = document.createElement('button');
+                    button.className = 'privacy-banner-btn';
+                    button.type = 'button';
+                    button.setAttribute('aria-label', "Fermer l'information de confidentialité");
+                    button.textContent = "J'ai compris";
+                    button.addEventListener('click', () => {
+                        banner.remove();
+                        localStorage.setItem('privacy-accepted', 'true');
+                    });
+
+                    banner.append(icon, text, button);
                     document.body.appendChild(banner);
                 }, 3000);
             }
