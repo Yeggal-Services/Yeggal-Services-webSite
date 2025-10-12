@@ -17,14 +17,21 @@
     <!-- Header -->
     <header id="header">
         <nav>
-            <div class="logo">Yeggal</div>
+            <div class="logo">
+                <i class="fas fa-handshake" aria-hidden="true"></i>
+                <span>Yeggal</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#accueil" class="active">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#fonctionnement">Comment ça marche</a></li>
-                <li><a href="prestataire.html">Devenir prestataire</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="#demande" class="nav-cta">Demander un service</a>
+                <a href="prestataire.html" class="nav-link-secondary">Devenir prestataire</a>
+            </div>
             <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
@@ -34,18 +41,43 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#fonctionnement">Comment ça marche</a></li>
-                <li><a href="prestataire.html">Devenir prestataire</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
+            <div class="mobile-nav-actions">
+                <a href="#demande" class="mobile-cta">Demander un service</a>
+                <a href="prestataire.html" class="mobile-link-secondary">Devenir prestataire</a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="hero-content">
-            <h1>Trouvez des prestataires de confiance à Dakar</h1>
-            <p>Connectez-vous facilement avec des professionnels vérifiés dans votre quartier. Rapide, sécurisé et transparent.</p>
-            
+            <div class="hero-intro">
+                <h1>Trouvez des prestataires de confiance à Dakar</h1>
+                <p>Connectez-vous facilement avec des professionnels vérifiés dans votre quartier. Rapide, sécurisé et transparent.</p>
+                <ul class="hero-benefits">
+                    <li><i class="fas fa-user-shield" aria-hidden="true"></i> Prestataires contrôlés et notés</li>
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i> Devis reçus en moins de 2 heures</li>
+                    <li><i class="fas fa-wallet" aria-hidden="true"></i> Prix transparents sans mauvaise surprise</li>
+                </ul>
+            </div>
+
+            <!-- <div class="hero-actions">
+                <a href="#demande" class="btn btn-primary" aria-label="Demander un service maintenant">Demander un service</a>
+                <div class="hero-proof" role="status">
+                    <div class="hero-rating">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                    </div>
+                    <p>Note moyenne 4.8/5 sur 1 200 missions</p>
+                </div>
+            </div> -->
+
             <div class="download-buttons">
                 <a href="#" class="download-btn" id="android-download">
                     <i class="fab fa-google-play"></i>
@@ -68,6 +100,20 @@
                     <i class="fas fa-user-tie"></i>
                     Devenir prestataire
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trustbar animate-on-scroll" aria-label="Partenaires et garanties">
+        <div class="container">
+            <p class="trustbar-title">Ils nous font déjà confiance</p>
+            <div class="trustbar-logos">
+                <span>Orange</span>
+                <span>Sonatel</span>
+                <span>SEDIMA</span>
+                <span>Auchan</span>
+                <span>CityDia</span>
             </div>
         </div>
     </section>
@@ -202,6 +248,7 @@
 
     <!-- Stats Section -->
     <section class="stats animate-on-scroll">
+        <h2 class="section-title">Statistiques</h2>
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -225,24 +272,136 @@
     </section>
 
     <!-- Testimonials -->
-    <!-- <section class="testimonials animate-on-scroll">
+    <!-- <section class="testimonials animate-on-scroll" id="temoignages">
         <div class="container">
-            <h2 class="section-title">Ils nous font confiance</h2>
-            <p class="section-subtitle">Découvrez les témoignages de nos utilisateurs satisfaits</p>
-            <div class="testimonial-slider">
-                <div class="testimonial animate-on-scroll">
-                    <p class="testimonial-text">"Grâce à Yeggal, j'ai trouvé un excellent plombier en moins de 2 heures. Service rapide et prestataire très professionnel. Je recommande vivement !"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AM</div>
-                        <div class="author-info">
+            <h2 class="section-title">Ils parlent de Yeggal</h2>
+            <p class="section-subtitle">Des clients et prestataires satisfaits recommandent notre plateforme</p>
+            <div class="testimonial-grid">
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« Grâce à Yeggal, j’ai trouvé un électricien fiable en moins d’une heure. Intervention rapide et prix correct. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">AM</div>
+                        <div>
                             <h4>Aminata Mbaye</h4>
-                            <p>Cliente - Almadies</p>
+                            <p>Cliente, Almadies</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« En tant que prestataire, je reçois des demandes régulières et je peux choisir les missions qui me conviennent. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">MD</div>
+                        <div>
+                            <h4>Mamadou Diop</h4>
+                            <p>Plombier, Parcelles</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 4,5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« Le suivi client est impeccable. L’équipe m’a aidée à sélectionner le meilleur prestataire pour mon chantier. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">FN</div>
+                        <div>
+                            <h4>Fatou Ndiaye</h4>
+                            <p>Chef d’entreprise, Plateau</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section> -->
+
+    <!-- Lead capture section -->
+    <section class="lead-section animate-on-scroll" id="demande">
+        <div class="container">
+            <div class="lead-wrapper">
+                <div class="lead-content">
+                    <h2 class="section-title">Décrivez votre besoin en 30 secondes</h2>
+                    <p class="section-subtitle">Un conseiller Yeggal vous rappelle rapidement pour sélectionner le meilleur prestataire.</p>
+                    <ul class="lead-benefits">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Accompagnement personnalisé gratuit</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Réseau de professionnels certifiés</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Paiement sécurisé après service rendu</li>
+                    </ul>
+                </div>
+                <form class="lead-form" aria-label="Formulaire de demande de service">
+                    <div class="form-group">
+                        <label for="lead-name">Votre prénom</label>
+                        <input type="text" id="lead-name" name="lead-name" placeholder="Ex: Awa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-phone">Téléphone</label>
+                        <input type="tel" id="lead-phone" name="lead-phone" placeholder="Ex: 77 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-service">Quel service recherchez-vous ?</label>
+                        <input type="text" id="lead-service" name="lead-service" placeholder="Plomberie, ménage, électricité…" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-location">Quartier</label>
+                        <input type="text" id="lead-location" name="lead-location" placeholder="Ex: Dakar Plateau" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-message">Détaillez votre besoin</label>
+                        <textarea id="lead-message" name="lead-message" rows="4" placeholder="Décrivez votre projet ou votre urgence"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Être rappelé(e)</button>
+                    <p class="form-success" role="status" aria-live="polite">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        Merci ! Notre équipe vous contactera dans les prochaines heures.
+                    </p>
+                    <p class="form-consent"><i class="fas fa-lock" aria-hidden="true"></i> Vos données sont protégées et ne seront jamais partagées.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section animate-on-scroll" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir avant de réserver un prestataire</p>
+            <div class="faq-grid">
+                <details>
+                    <summary>Comment sélectionnez-vous les prestataires ?</summary>
+                    <p>Chaque prestataire est vérifié par notre équipe à l’aide de ses pièces d’identité, références clients et vérifications de compétences. Les avis de la communauté permettent ensuite de maintenir des standards élevés.</p>
+                </details>
+                <details>
+                    <summary>Quels sont les délais de réponse ?</summary>
+                    <p>La plupart des demandes reçoivent une première proposition en moins de deux heures. Pour les urgences, contactez-nous directement afin de prioriser votre demande.</p>
+                </details>
+                <details>
+                    <summary>Comment se passe le paiement ?</summary>
+                    <p>Vous payez uniquement après la réalisation du service. Nous proposons un acompte sécurisé si nécessaire et un reçu détaillé est envoyé par e-mail.</p>
+                </details>
+                <details>
+                    <summary>Que se passe-t-il si je ne suis pas satisfait(e) ?</summary>
+                    <p>Notre équipe support intervient pour trouver une solution rapide. Nous pouvons organiser une nouvelle intervention ou un remboursement selon les conditions d’utilisation.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
     <section class="cta-section animate-on-scroll">
@@ -385,10 +544,13 @@
                     
                     // Special handling for stats section
                     if (entry.target.classList.contains('stats')) {
-                        animateCounter(document.getElementById('prestataires-count'), 50);
-                        animateCounter(document.getElementById('services-count'), 100);
-                        animateCounter(document.getElementById('clients-count'), 150);
-                        animateCounter(document.getElementById('quartiers-count'), 35);
+                        if (!entry.target.dataset.counted) {
+                            animateCounter(document.getElementById('prestataires-count'), 780);
+                            animateCounter(document.getElementById('services-count'), 3200);
+                            animateCounter(document.getElementById('clients-count'), 1850);
+                            animateCounter(document.getElementById('quartiers-count'), 45);
+                            entry.target.dataset.counted = 'true';
+                        }
                     }
                 }
             });
@@ -423,14 +585,14 @@
 
         // Active navigation link highlighting
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
+            const sections = document.querySelectorAll('section[id], footer[id]');
             const navLinks = document.querySelectorAll('.nav-links a');
             
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                if (window.scrollY >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -457,13 +619,34 @@
         });
 
         // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        let heroParallaxEnabled = window.innerWidth > 1024;
+        const hero = document.querySelector('.hero');
+
+        window.addEventListener('resize', () => {
+            heroParallaxEnabled = window.innerWidth > 1024;
+            if (!heroParallaxEnabled && hero) {
+                hero.style.transform = 'none';
             }
         });
+
+        window.addEventListener('scroll', () => {
+            if (!heroParallaxEnabled || !hero) return;
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.25}px)`;
+        });
+
+        const leadForm = document.querySelector('.lead-form');
+        if (leadForm) {
+            const successMessage = leadForm.querySelector('.form-success');
+            leadForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (successMessage) {
+                    successMessage.classList.add('visible');
+                    setTimeout(() => successMessage.classList.remove('visible'), 6000);
+                }
+                leadForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
