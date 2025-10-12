@@ -14,6 +14,17 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- Construction Banner -->
+    <div class="construction-banner" id="construction-banner">
+        <div class="construction-content">
+            <i class="fas fa-tools" aria-hidden="true"></i>
+            <span class="construction-text">Site en cours de développement — Bientôt disponible!</span>
+            <button class="construction-close" onclick="closeBanner()" aria-label="Fermer la bannière" title="Fermer">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Header -->
     <header id="header">
         <nav>
@@ -485,7 +496,26 @@
                     document.getElementById('loading').style.display = 'none';
                 }, 500);
             }, 1000);
+            
+            // Initialize banner visibility
+            const banner = document.getElementById('construction-banner');
+            if (banner && !sessionStorage.getItem('bannerClosed')) {
+                document.body.classList.add('banner-visible');
+            } else if (banner) {
+                banner.style.display = 'none';
+            }
         });
+
+        // Close banner function
+        function closeBanner() {
+            const banner = document.getElementById('construction-banner');
+            banner.style.animation = 'slideOutUp 0.3s ease-out forwards';
+            setTimeout(() => {
+                banner.style.display = 'none';
+                document.body.classList.remove('banner-visible');
+                sessionStorage.setItem('bannerClosed', 'true');
+            }, 300);
+        }
 
         // Mobile menu toggle
         function toggleMenu() {
