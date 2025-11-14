@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestion et suppression de votre compte Yeggal">
+    <title>Gestion de compte - Yeggal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2196F3;
+            --primary-dark: #1976D2;
+            --danger-color: #f44336;
+            --danger-dark: #d32f2f;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --text-dark: #212121;
+            --text-light: #757575;
+            --bg-light: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        /* Content */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #E3F2FD;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .info-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #FFF3E0;
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box h3 {
+            color: #E65100;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box p {
+            color: var(--text-dark);
+        }
+
+        /* Danger Box */
+        .danger-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger-dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Options */
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .option-card {
+            background: var(--white);
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .option-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .option-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: var(--white);
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-dark);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            color: var(--danger-color);
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-light);
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .modal-actions .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <!-- <div class="logo">🏠</div> -->
+            <h1>Yeggal Services</h1>
+            <p>Gestion de votre compte et de vos données</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Section: Vos droits -->
+            <div class="section">
+                <h2>
+                    <span class="icon">👤</span>
+                    Vos droits sur vos données
+                </h2>
+                <p>
+                    Conformément aux lois sur la protection des données, vous avez le contrôle total sur vos informations personnelles collectées et stockées à travers l'application mobile Yëggal Services.
+                </p>
+                
+                <div class="info-box">
+                    <h3>Données que nous collectons :</h3>
+                    <ul>
+                        <li>Nom complet et numéro de téléphone</li>
+                        <li>Adresse et localisation (pour les services à proximité)</li>
+                        <li>Historique des demandes et offres de services</li>
+                        <li>Messages et conversations</li>
+                        <li>Avis et évaluations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section: Options de gestion -->
+            <div class="section">
+                <h2>
+                    <span class="icon">⚙️</span>
+                    Options de gestion de compte
+                </h2>
+                
+                <div class="options">
+                    <!-- Option 1: Télécharger les données 
+                    <div class="option-card">
+                        <h3>📥 Télécharger mes données</h3>
+                        <p>Recevez une copie de toutes vos données personnelles dans un format lisible.</p>
+                        <a href="#" class="btn btn-outline" onclick="downloadData(); return false;">
+                            Demander mes données
+                        </a>
+                    </div> -->
+
+                    <!-- Option 2: Modifier les données -->
+                    <div class="option-card">
+                        <h3>✏️ Modifier mes informations</h3>
+                        <p>Mettez à jour votre profil, numéro de téléphone ou autres informations.</p>
+                        <a href="#" class="btn btn-outline" onclick="editData(); return false;">
+                            Modifier mes données
+                        </a>
+                    </div>
+
+                    <!-- Option 3: Supprimer certaines données -->
+                    <div class="option-card">
+                        <h3>🗑️ Supprimer des données</h3>
+                        <p>Supprimez des informations spécifiques sans fermer votre compte.</p>
+                        <a href="#" class="btn btn-outline" onclick="deletePartialData(); return false;">
+                            Supprimer des données
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Suppression de compte -->
+            <div class="section">
+                <h2>
+                    <span class="icon">⚠️</span>
+                    Suppression de compte
+                </h2>
+                
+                <div class="warning-box">
+                    <h3>⏱️ Délai de traitement</h3>
+                    <p>
+                        Votre demande sera traitée dans un délai de <strong>3 - 5 jours</strong> maximum. 
+                        Vous recevrez une confirmation par SMS ou email une fois la suppression effectuée.
+                    </p>
+                </div>
+
+                <div class="danger-box">
+                    <h3>🚨 Attention : Action irréversible</h3>
+                    <p>
+                        La suppression de votre compte entraînera la <strong>perte définitive</strong> de :
+                    </p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Votre profil et toutes vos informations personnelles</li>
+                        <li>L'historique de vos demandes et offres de services</li>
+                        <li>Vos conversations et messages</li>
+                        <li>Vos avis et évaluations</li>
+                        <li>Votre accès à l'application</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <button class="btn btn-danger" onclick="openDeleteModal()">
+                        Supprimer définitivement mon compte
+                    </button>
+                </div>
+            </div>
+
+            <!-- Section: Contact -->
+            <div class="section">
+                <h2>
+                    <span class="icon">💬</span>
+                    Besoin d'aide ?
+                </h2>
+                <p>
+                    Si vous avez des questions sur la gestion de vos données ou si vous rencontrez des difficultés, 
+                    notre équipe de support est là pour vous aider.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="mailto:support@yeggal.com" class="btn btn-primary">
+                        Contacter le support
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Yëggal Services </p>
+            <div>
+                <a href="confidentialite.html">Politique de confidentialité</a>
+                <a href="conditions.html">Conditions d'utilisation</a>
+                <!-- <a href="#">Mentions légales</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmation -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h2>⚠️ Confirmer la suppression</h2>
+            <p>
+                Êtes-vous absolument sûr de vouloir supprimer votre compte ? 
+                Cette action est <strong>irréversible</strong> et vous perdrez toutes vos données.
+            </p>
+            <p style="color: var(--text-light); font-size: 0.95rem;">
+                Si vous avez des services en cours, ils seront automatiquement annulés.
+            </p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeDeleteModal()">
+                    Annuler
+                </button>
+                <button class="btn btn-danger" onclick="confirmDelete()">
+                    Oui, supprimer mon compte
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ouvrir le modal de suppression
+        function openDeleteModal() {
+            document.getElementById('deleteModal').classList.add('active');
+        }
+
+        // Fermer le modal
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.remove('active');
+        }
+
+        // Confirmer la suppression et rediriger vers le formulaire
+        function confirmDelete() {
+            // Remplacez cette URL par votre formulaire Google Forms ou autre
+            const formUrl = 'https://forms.gle/VOTRE_FORMULAIRE_ICI';
+            
+            // Redirection vers le formulaire
+            window.location.href = formUrl;
+        }
+
+        // Télécharger les données
+        function downloadData() {
+            // Remplacez par votre formulaire de demande de données
+            const formUrl = 'https://forms.gle/VOTRE_FORMULAIRE_TELECHARGEMENT';
+            window.location.href = formUrl;
+        }
+
+        // Modifier les données
+        function editData() {
+            alert('Cette fonctionnalité est disponible directement dans l\'application Yeggal.\n\nOuvrez l\'application → Profil → Modifier mes informations');
+        }
+
+        // Supprimer des données partielles
+        function deletePartialData() {
+            // Remplacez par votre formulaire de suppression partielle
+            const formUrl = 'https://forms.gle/VOTRE_FORMULAIRE_SUPPRESSION_PARTIELLE';
+            window.location.href = formUrl;
+        }
+
+        // Fermer le modal en cliquant en dehors
+        document.getElementById('deleteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDeleteModal();
+            }
+        });
+    </script>
+</body>
+</html>
