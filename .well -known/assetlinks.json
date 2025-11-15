@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.devall.yeggal",
+      "sha256_cert_fingerprints": [
+        "77:57:41:5B:14:40:5F:77:35:BD:42:89:CD:6D:6E:EE:29:0D:6D:3A:EB:3A:05:99:F4:A1:ED:AA:B3:70:CF:D0"
+      ]
+    }
+  }
+]
