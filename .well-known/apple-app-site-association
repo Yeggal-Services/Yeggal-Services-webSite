@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "XMB855Z353.com.devall.yeggal",
+        "paths": [
+          "/profile/*",
+          "/local/*"
+        ]
+      }
+    ]
+  }
+}
