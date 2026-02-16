@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yëggal Services - Redirection</title>
+    
+    <!-- Meta tags pour les réseaux sociaux -->
+    <meta property="og:title" content="Yëggal Services">
+    <meta property="og:description" content="Trouvez les meilleurs prestataires de services au Sénégal">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://yeggalservices.app">
+    
+    <!-- Deep link configuration -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+    <meta name="google-play-app" content="app-id=com.devall.yeggal">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .divider {
+            margin: 30px 0;
+            color: #999;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+            z-index: -1;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 15px;
+        }
+        
+        .browser-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .browser-link:hover {
+            text-decoration: underline;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .redirect-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            color: #1976d2;
+        }
+        
+        .redirect-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.png" width="80%" height="80%">
+        </div>
+        <h1>Yëggal Services</h1>
+        <p class="subtitle">Ouvrir dans l'application</p>
+        
+        <div class="app-buttons">
+            <a href="#" id="openApp" class="btn btn-primary">
+                <span id="openAppText">Ouvrir l'application</span>
+                <span class="spinner" id="spinner" style="display: none;"></span>
+            </a>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.devall.yeggal" class="btn btn-secondary" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                </svg>
+                Télécharger sur Play Store
+            </a>
+            
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-secondary" target="_blank" style="display: none;" id="appStoreBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                </svg>
+                Télécharger sur App Store
+            </a>
+        </div>
+        
+        <div class="divider">
+            <span>ou</span>
+        </div>
+        
+        <a href="index.html" id="continueInBrowser" class="browser-link">
+            Continuer dans le navigateur →
+        </a>
+        
+        <div class="redirect-message" id="redirectMessage">
+            Redirection vers l'application...
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const config = {
+            androidScheme: 'yeggal://',
+            iosScheme: 'yeggal://',
+            webUrl: 'https://yeggalservices.app',
+            playStoreUrl: 'https://play.google.com/store/apps/details?id=com.devall.yeggal',
+            appStoreUrl: 'https://apps.apple.com/app/idYOUR_APP_ID',
+            redirectTimeout: 2000
+        };
+
+        // Détecter la plateforme
+        function detectPlatform() {
+            const ua = navigator.userAgent.toLowerCase();
+            if (/android/.test(ua)) return 'android';
+            if (/iphone|ipad|ipod/.test(ua)) return 'ios';
+            return 'web';
+        }
+
+        // Extraire le path depuis l'URL
+        function getDeepLinkPath() {
+            const path = window.location.pathname;
+            return path === '/' ? '' : path;
+        }
+
+        // Construire l'URL de deep link
+        function buildDeepLink(platform) {
+            const path = getDeepLinkPath();
+            const scheme = platform === 'ios' ? config.iosScheme : config.androidScheme;
+            return scheme + path.substring(1); // Enlever le / du début
+        }
+
+        // Tenter d'ouvrir l'app
+        function openApp() {
+            const platform = detectPlatform();
+            const deepLink = buildDeepLink(platform);
+            
+            console.log('Platform:', platform);
+            console.log('Deep link:', deepLink);
+            
+            // Afficher le spinner
+            document.getElementById('openAppText').style.display = 'none';
+            document.getElementById('spinner').style.display = 'inline-block';
+            document.getElementById('redirectMessage').classList.add('show');
+            
+            // Tenter d'ouvrir l'app
+            window.location.href = deepLink;
+            
+            // Fallback vers le store après un délai
+            setTimeout(() => {
+                document.getElementById('openAppText').style.display = 'inline';
+                document.getElementById('spinner').style.display = 'none';
+                document.getElementById('redirectMessage').classList.remove('show');
+                
+                // Si l'app ne s'est pas ouverte, rediriger vers le store
+                if (platform === 'android') {
+                    window.location.href = config.playStoreUrl;
+                } else if (platform === 'ios') {
+                    window.location.href = config.appStoreUrl;
+                }
+            }, config.redirectTimeout);
+        }
+
+        // Continuer dans le navigateur
+        function continueInBrowser() {
+            const path = getDeepLinkPath();
+            window.location.href = config.webUrl; //+ '/web' + path;
+        }
+
+        // Event listeners
+        document.getElementById('openApp').addEventListener('click', (e) => {
+            e.preventDefault();
+            openApp();
+        });
+
+        document.getElementById('continueInBrowser').addEventListener('click', (e) => {
+            e.preventDefault();
+            continueInBrowser();
+        });
+
+        // Afficher le bon bouton de store selon la plateforme
+        const platform = detectPlatform();
+        if (platform === 'ios') {
+            document.getElementById('appStoreBtn').style.display = 'flex';
+        }
+
+        // Auto-redirect si paramètre autoOpen est présent
+        if (new URLSearchParams(window.location.search).get('autoOpen') === 'true') {
+            openApp();
+        }
+    </script>
+</body>
+</html>
