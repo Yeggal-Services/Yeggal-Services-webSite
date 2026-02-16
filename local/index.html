@@ -7,13 +7,13 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="../images/logo.png">
+    <link rel="apple-touch-icon" href="/assets/yeggal-logo.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Yëggal Services - Découvrez ce logement">
     <meta property="og:description" content="Découvrez ce logement disponible sur Yëggal Services">
-    <meta property="og:image" content="../images/logo.png">
+    <meta property="og:image" content="/assets/yeggal-logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -282,12 +282,13 @@
             btn.innerHTML = 'Ouverture en cours<span class="loader"></span>';
             btn.disabled = true;
 
-            // MÉTHODE 1: Android Intent (le plus fiable pour Android)
+            // ⚡ SOLUTION AVEC INTENT URLs (fonctionne IMMÉDIATEMENT)
             if (isAndroid) {
-                // Intent URL avec query parameter (compatible GitHub Pages)
-                const intentUrl = `intent://local?id=${localId}#Intent;scheme=https;host=yeggalservices.app;package=com.devall.yeggal;end`;
+                // Intent URL avec scheme yeggal:// (pas besoin d'assetlinks.json)
+                // Format: intent://ACTION#Intent;scheme=SCHEME;package=PACKAGE;S.browser_fallback_url=URL;end
+                const intentUrl = `intent://local?id=${localId}#Intent;scheme=yeggal;package=com.devall.yeggal;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.devall.yeggal;end`;
 
-                console.log('🤖 Android Intent:', intentUrl);
+                console.log('🤖 Android Intent URL:', intentUrl);
                 window.location.href = intentUrl;
 
                 // Fallback après 2 secondes
@@ -297,13 +298,15 @@
                     status.innerHTML = "L'application ne s'est pas ouverte ?<br>Téléchargez-la via Play Store ci-dessous";
                 }, 2000);
             }
-            // MÉTHODE 2: Universal Link pour iOS
+            // iOS: Essayer le custom scheme
             else if (isIOS) {
+                const customScheme = `yeggal://local?id=${localId}`;
                 // iOS essaiera d'ouvrir avec l'Universal Link (query parameter)
                 const universalLink = `https://yeggalservices.app/local?id=${localId}`;
 
-                console.log('🍎 iOS Universal Link:', universalLink);
-                window.location.href = universalLink;
+
+                console.log('🍎 iOS Custom Scheme:', customScheme);
+                window.location.href = universalLink; //customScheme;
 
                 setTimeout(() => {
                     btn.innerHTML = 'Ouvrir dans l\'application';
@@ -311,7 +314,7 @@
                     status.innerHTML = "L'application ne s'est pas ouverte ?<br>Téléchargez-la via App Store ci-dessous";
                 }, 2000);
             }
-            // MÉTHODE 3: Fallback pour desktop
+            // Desktop: Afficher un message
             else {
                 btn.innerHTML = 'Ouvrir dans l\'application';
                 btn.disabled = false;
