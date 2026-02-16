@@ -7,13 +7,13 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/yeggal-logo.png">
+    <link rel="apple-touch-icon" href="../images/logo.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Yëggal Services - Profil Prestataire">
     <meta property="og:description" content="Découvrez le profil de ce prestataire sur Yëggal Services">
-    <meta property="og:image" content="/assets/yeggal-logo.png">
+    <meta property="og:image" content="../images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -284,10 +284,9 @@
 
             // MÉTHODE 1: Android Intent (le plus fiable pour Android)
             if (isAndroid) {
-                // Intent URL avec query parameter (compatible GitHub Pages)
-                const intentUrl = `intent://profile?id=${profileId}#Intent;scheme=https;host=yeggalservices.app;package=com.devall.yeggal;end`;
+                const intentUrl = `intent://local?id=${localId}#Intent;scheme=yeggal;package=com.devall.yeggal;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.devall.yeggal;end`;
 
-                console.log('🤖 Android Intent:', intentUrl);
+                console.log('🤖 Android Intent URL:', intentUrl);
                 window.location.href = intentUrl;
 
                 // Fallback après 2 secondes
@@ -299,11 +298,12 @@
             }
             // MÉTHODE 2: Universal Link pour iOS
             else if (isIOS) {
+                const customScheme = `yeggal://local?id=${localId}`;
                 // iOS essaiera d'ouvrir avec l'Universal Link (query parameter)
                 const universalLink = `https://yeggalservices.app/profile?id=${profileId}`;
 
                 console.log('🍎 iOS Universal Link:', universalLink);
-                window.location.href = universalLink;
+                window.location.href = universalLink; // customScheme;
 
                 setTimeout(() => {
                     btn.innerHTML = 'Ouvrir dans l\'application';
