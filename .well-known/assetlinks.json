@@ -8,7 +8,9 @@
       "namespace": "android_app",
       "package_name": "com.devall.yeggal",
       "sha256_cert_fingerprints": [
-        "77:57:41:5B:14:40:5F:77:35:BD:42:89:CD:6D:6E:EE:29:0D:6D:3A:EB:3A:05:99:F4:A1:ED:AA:B3:70:CF:D0"
+        "77:57:41:5B:14:40:5F:77:35:BD:42:89:CD:6D:6E:EE:29:0D:6D:3A:EB:3A:05:99:F4:A1:ED:AA:B3:70:CF:D0",
+        "b2:9d:15:74:8f:74:36:7a:0d:69:68:93:db:92:16:d4:92:bb:05:9f:c6:d1:03:e5:aa:de:7b:94:4d:f5:ab:dd",
+        "77:57:41:5b:14:40:5f:77:35:bd:42:89:cd:6d:6e:ee:29:0d:6d:3a:eb:3a:05:99:f4:a1:ed:aa:b3:70:cf:d0"
       ]
     }
   }
