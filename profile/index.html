@@ -235,9 +235,26 @@
     </div>
 
     <script>
-        // Extraire l'ID du profil depuis l'URL
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        const profileId = pathParts[pathParts.length - 1]; // Dernier segment de l'URL
+        // Extraire l'ID du profil depuis l'URL (query parameter OU path)
+        function getProfileId() {
+            // Essayer d'abord le query parameter (?id=xxx)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idFromQuery = urlParams.get('id');
+
+            if (idFromQuery) {
+                return idFromQuery;
+            }
+
+            // Fallback: essayer depuis le path (/profile/xxx)
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            if (pathParts.length >= 2 && pathParts[0] === 'profile') {
+                return pathParts[1];
+            }
+
+            return null;
+        }
+
+        const profileId = getProfileId();
 
         console.log('👤 Page:', window.location.href);
         console.log('👤 ID du profil:', profileId);
@@ -267,8 +284,8 @@
 
             // MÉTHODE 1: Android Intent (le plus fiable pour Android)
             if (isAndroid) {
-                // Intent URL qui force l'ouverture de l'app ou redirige vers le Play Store
-                const intentUrl = `intent://profile/${profileId}#Intent;scheme=https;host=yeggalservices.app;package=com.devall.yeggal;end`;
+                // Intent URL avec query parameter (compatible GitHub Pages)
+                const intentUrl = `intent://profile?id=${profileId}#Intent;scheme=https;host=yeggalservices.app;package=com.devall.yeggal;end`;
 
                 console.log('🤖 Android Intent:', intentUrl);
                 window.location.href = intentUrl;
@@ -282,8 +299,8 @@
             }
             // MÉTHODE 2: Universal Link pour iOS
             else if (isIOS) {
-                // iOS essaiera d'ouvrir avec l'Universal Link
-                const universalLink = `https://yeggalservices.app/profile/${profileId}`;
+                // iOS essaiera d'ouvrir avec l'Universal Link (query parameter)
+                const universalLink = `https://yeggalservices.app/profile?id=${profileId}`;
 
                 console.log('🍎 iOS Universal Link:', universalLink);
                 window.location.href = universalLink;
