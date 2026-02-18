@@ -7,18 +7,24 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/yeggal-logo.png">
+    <link rel="apple-touch-icon" href="../images/logo.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Yëggal Services - Découvrez ce logement">
     <meta property="og:description" content="Découvrez ce logement disponible sur Yëggal Services">
-    <meta property="og:image" content="/assets/yeggal-logo.png">
+    <meta property="og:image" content="../images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Yëggal Services - Logement">
     <meta property="twitter:description" content="Découvrez ce logement disponible sur Yëggal Services">
+
+    <!-- Smart App Banner pour iOS -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_IOS_APP_ID">
+
+    <!-- Android App Deep Link -->
+    <meta name="google-play-app" content="app-id=com.devall.yeggal">
 
     <style>
         * {
@@ -180,12 +186,16 @@
             font-size: 14px;
             color: #718096;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <img src="" alt="Yëggal Services Logo">
+            <img src="../images/logo.png" alt="Yëggal Services Logo" onerror="this.style.display='none'">
         </div>
         <h1>Yëggal Services</h1>
         <p class="subtitle" id="subtitle">Logements et services au Sénégal</p>
@@ -198,7 +208,7 @@
             </div>
         </div>
 
-        <button class="open-app-btn" id="openAppBtn" onclick="openApp()">
+        <button class="open-app-btn" id="openAppBtn" onclick="tryOpenApp()">
             Ouvrir dans l'application
         </button>
 
@@ -211,7 +221,7 @@
                 </svg>
                 Play Store
             </a>
-            <a href="https://apps.apple.com/app/yeggal-services/idXXXXXXXXX" class="store-btn" id="appStoreBtn">
+            <a href="https://apps.apple.com/app/yeggal-services/idXXXXXXXXX" class="store-btn hidden" id="appStoreBtn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"></path>
                 </svg>
@@ -225,55 +235,112 @@
     </div>
 
     <script>
-        // Extraire l'ID du logement depuis l'URL
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        const localId = pathParts[pathParts.length - 1]; // Dernier segment de l'URL
+        // Extraire l'ID du logement depuis l'URL (query parameter OU path)
+        function getLocalId() {
+            // Essayer d'abord le query parameter (?id=xxx)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idFromQuery = urlParams.get('id');
 
+            if (idFromQuery) {
+                return idFromQuery;
+            }
+
+            // Fallback: essayer depuis le path (/local/xxx)
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            if (pathParts.length >= 2 && pathParts[0] === 'local') {
+                return pathParts[1];
+            }
+
+            return null;
+        }
+
+        const localId = getLocalId();
+
+        console.log('🏠 Page:', window.location.href);
         console.log('🏠 ID du logement:', localId);
 
-        function openApp() {
+        // Détecter la plateforme
+        const ua = navigator.userAgent;
+        const isAndroid = /Android/i.test(ua);
+        // Détection iOS robuste : couvre le mode "Afficher le site complet" de Safari
+        // qui masque "iPhone" du user-agent mais laisse maxTouchPoints > 1 sur Mac/iOS
+        const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+                      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isMobile = isAndroid || isIOS;
+
+        // Afficher le bon bouton de store
+        if (isIOS) {
+            document.getElementById('appStoreBtn').classList.remove('hidden');
+        }
+
+        function tryOpenApp() {
+            if (!localId) {
+                console.error('❌ Pas de local ID dans l\'URL');
+                showStatus('Lien invalide', 'error');
+                return;
+            }
+
             const btn = document.getElementById('openAppBtn');
             const status = document.getElementById('status');
 
-            // Construire le deep link
-            const deepLink = `yeggalservices://local/${localId}`;
-            
-            console.log('🔗 Deep link généré:', deepLink);
-
-            // Afficher l'état de chargement
             btn.innerHTML = 'Ouverture en cours<span class="loader"></span>';
             btn.disabled = true;
 
-            // Essayer d'ouvrir l'app
-            window.location.href = deepLink;
+            // ⚡ SOLUTION AVEC INTENT URLs (fonctionne IMMÉDIATEMENT)
+            if (isAndroid) {
+                // Intent URL avec scheme yeggal:// (pas besoin d'assetlinks.json)
+                // Format: intent://ACTION#Intent;scheme=SCHEME;package=PACKAGE;S.browser_fallback_url=URL;end
+                const intentUrl = `intent://local?id=${localId}#Intent;scheme=yeggal;package=com.devall.yeggal;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.devall.yeggal;end`;
 
-            // Fallback après 2 secondes
-            setTimeout(() => {
-                status.innerHTML = "L'application ne s'est pas ouverte ? <br>Téléchargez-la via les liens ci-dessous";
+                console.log('🤖 Android Intent URL:', intentUrl);
+                window.location.href = intentUrl;
+
+                // Fallback après 2 secondes
+                setTimeout(() => {
+                    btn.innerHTML = 'Ouvrir dans l\'application';
+                    btn.disabled = false;
+                    status.innerHTML = "L'application ne s'est pas ouverte ?<br>Téléchargez-la via Play Store ci-dessous";
+                }, 2000);
+            }
+            // iOS: Essayer le custom scheme
+            else if (isIOS) {
+                const customScheme = `yeggal://local?id=${localId}`;
+                // iOS essaiera d'ouvrir avec l'Universal Link (query parameter)
+                const universalLink = `https://yeggalservices.app/local?id=${localId}`;
+
+
+                console.log('🍎 iOS Custom Scheme:', customScheme);
+                window.location.href = customScheme; //universalLink;
+
+                setTimeout(() => {
+                    btn.innerHTML = 'Ouvrir dans l\'application';
+                    btn.disabled = false;
+                    status.innerHTML = "L'application ne s'est pas ouverte ?<br>Téléchargez-la via App Store ci-dessous";
+                }, 2000);
+            }
+            // Desktop: Afficher un message
+            else {
                 btn.innerHTML = 'Ouvrir dans l\'application';
                 btn.disabled = false;
-            }, 2000);
-
-            // Alternative pour Android avec Intent
-            if (navigator.userAgent.match(/Android/i)) {
-                const intentUrl = `intent://local/${localId}#Intent;scheme=yeggalservices;package=com.devall.yeggal;end`;
-                setTimeout(() => {
-                    window.location.href = intentUrl;
-                }, 500);
+                status.innerHTML = "Scannez le QR code avec votre téléphone pour ouvrir dans l'application";
             }
         }
 
-        // Auto-redirection sur mobile si l'app est installée
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile && localId && localId.length > 10) {
-            // Essayer d'ouvrir automatiquement après un court délai
-            setTimeout(() => {
-                openApp();
-            }, 1000);
+        function showStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.innerHTML = message;
+            status.style.color = type === 'error' ? '#e53e3e' : '#718096';
         }
 
-        // Mettre à jour les meta tags dynamiquement si on a plus d'infos
-        // (pourrait être enrichi avec une API Firebase)
+        // Auto-redirection sur mobile si un localId valide est présent
+        if (isMobile && localId && localId.length > 10) {
+            console.log('📱 Mobile détecté, auto-redirection dans 1.5s...');
+            setTimeout(() => {
+                tryOpenApp();
+            }, 1500);
+        }
+
+        // Mettre à jour les meta tags dynamiquement
         if (localId) {
             document.title = `Logement ${localId.slice(0, 8)}... - Yëggal Services`;
         }

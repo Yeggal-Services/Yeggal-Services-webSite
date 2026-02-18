@@ -8,7 +8,8 @@
       "namespace": "android_app",
       "package_name": "com.devall.yeggal",
       "sha256_cert_fingerprints": [
-        "77:57:41:5B:14:40:5F:77:35:BD:42:89:CD:6D:6E:EE:29:0D:6D:3A:EB:3A:05:99:F4:A1:ED:AA:B3:70:CF:D0"
+        "77:57:41:5B:14:40:5F:77:35:BD:42:89:CD:6D:6E:EE:29:0D:6D:3A:EB:3A:05:99:F4:A1:ED:AA:B3:70:CF:D0",
+        "B2:9D:15:74:8F:74:36:7A:0D:69:68:93:DB:92:16:D4:92:BB:05:9F:C6:D1:03:E5:AA:DE:7B:94:4D:F5:AB:DD"
       ]
     }
   }

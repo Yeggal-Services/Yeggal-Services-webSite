@@ -9,7 +9,7 @@
 
 **Connecter clients et prestataires de confiance à Dakar**
 
-[🌐 Visiter le Site](#-accéder-au-site-web) · [📱 Application Mobile](#-application-mobile) · [🤝 Devenir Prestataire](#-devenir-prestataire) · [📧 Contact](#-contact)
+[🌐 Visiter le Site](https://yeggalservices.app/) · [📱 Application Mobile](#-application-mobile) · [🤝 Devenir Prestataire](#-devenir-prestataire) · [📧 Contact](#-contact)
 
 </div>
 
