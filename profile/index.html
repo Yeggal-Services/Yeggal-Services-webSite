@@ -260,8 +260,12 @@
         console.log('👤 ID du profil:', profileId);
 
         // Détecter la plateforme
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const ua = navigator.userAgent;
+        const isAndroid = /Android/i.test(ua);
+        // Détection iOS robuste : couvre le mode "Afficher le site complet" de Safari
+        // qui masque "iPhone" du user-agent mais laisse maxTouchPoints > 1 sur Mac/iOS
+        const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+                      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         const isMobile = isAndroid || isIOS;
 
         // Afficher le bon bouton de store
