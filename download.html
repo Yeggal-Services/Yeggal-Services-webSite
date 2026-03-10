@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Télécharger Yëggal Services</title>
+  <meta name="description" content="Téléchargez Yëggal Services — la plateforme de mise en relation entre clients et prestataires au Sénégal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1044b2;
+      --primary-light: #e8f0fe;
+      --bg: #f8faff;
+      --surface: #ffffff;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 4px 24px rgba(26, 86, 219, 0.10);
+      --shadow-lg: 0 12px 40px rgba(26, 86, 219, 0.15);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+
+    header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .logo span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .header-back {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .header-back:hover { color: var(--primary); }
+
+    /* ── Page wrapper ── */
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(26,86,219,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    /* ── App icon ── */
+    .app-icon {
+      width: 80px; height: 80px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 16px rgba(26,86,219,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 68px; height: 68px;
+      object-fit: contain;
+    }
+
+    .app-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.3rem;
+    }
+
+    .app-tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* ── Badge OS ── */
+    .detected-badge {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--primary-light);
+      border: 1px solid rgba(26,86,219,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .detected-badge.show { display: flex; }
+
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.7); }
+    }
+
+    /* ── Boutons store ── */
+    .store-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.9rem 1.3rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .download-btn:hover { transform: translateY(-2px); }
+    .download-btn:active { transform: translateY(0); }
+
+    /* Bouton mis en avant (OS détecté) */
+    .download-btn.primary-store {
+      background: var(--text);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(17,24,39,0.2);
+    }
+
+    .download-btn.primary-store:hover {
+      box-shadow: 0 8px 28px rgba(17,24,39,0.3);
+    }
+
+    /* Bouton secondaire */
+    .download-btn.secondary-store {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .download-btn.secondary-store:hover {
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px rgba(26,86,219,0.12);
+    }
+
+    .store-icon-wrap {
+      font-size: 1.5rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .btn-text { text-align: left; }
+
+    .btn-text .small {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      opacity: 0.7;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .btn-text .large {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-arrow {
+      margin-left: auto;
+      font-size: 0.75rem;
+      opacity: 0.4;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .download-btn:hover .btn-arrow {
+      transform: translateX(3px);
+      opacity: 0.8;
+    }
+
+    /* ── Séparateur ── */
+    .sep {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .sep::before, .sep::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Chips features ── */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .chip i { color: var(--primary); font-size: 0.65rem; }
+
+    /* ── Footer ── */
+    .page-footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      animation: fadeUp 0.6s 0.25s ease both;
+      opacity: 0;
+    }
+
+    .page-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .page-footer a:hover { text-decoration: underline; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.25rem; border-radius: 20px; }
+      .app-name { font-size: 1.35rem; }
+      header { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo Yeggal" class="logo-image" />
+      <span>Yëggal Services</span>
+    </a>
+    <a href="index.html" class="header-back">
+      <i class="fas fa-arrow-left"></i>&nbsp; Retour au site
+    </a>
+  </header>
+
+  <div class="page-wrapper">
+
+    <div class="card">
+
+      <div class="app-icon">
+        <img src="images/logo.png" alt="Yëggal Services" />
+      </div>
+
+      <h1 class="app-name">Yëggal Services</h1>
+      <p class="app-tagline">Trouvez des prestataires de confiance<br>près de chez vous — Sénégal</p>
+
+      <div class="detected-badge" id="detectedBadge">
+        <span class="badge-dot"></span>
+        <span id="badgeText"></span>
+      </div>
+
+      <div class="store-buttons">
+        <a href="#" id="btnIos" class="download-btn">
+          <span class="store-icon-wrap"><i class="fab fa-apple"></i></span>
+          <div class="btn-text">
+            <span class="small">Télécharger sur</span>
+            <span class="large">App Store</span>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+
+        <div class="sep">ou</div>
+
+        <a href="#" id="btnAndroid" class="download-btn">
+          <span class="store-icon-wrap"><i class="fab fa-google-play"></i></span>
+          <div class="btn-text">
+            <span class="small">Télécharger sur</span>
+            <span class="large">Google Play</span>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+      </div>
+
+      <div class="features">
+        <div class="chip"><i class="fas fa-shield-alt"></i> Prestataires vérifiés</div>
+        <div class="chip"><i class="fas fa-map-marker-alt"></i> Proche de vous</div>
+        <div class="chip"><i class="fas fa-star"></i> Notés & approuvés</div>
+        <div class="chip"><i class="fas fa-comments"></i> Chat intégré</div>
+        <div class="chip"><i class="fas fa-home"></i> Immobilier</div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      © 2025 Yëggal Services &nbsp;·&nbsp;
+      <a href="conditions.html">CGU</a> &nbsp;·&nbsp;
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+
+  </div>
+
+  <script>
+    const STORES = {
+      ios:     'https://apps.apple.com/us/app/yeggal-services/id6757340219',
+      android: 'https://play.google.com/store/apps/details?id=com.devall.yeggal'
+    };
+
+    const btnIos     = document.getElementById('btnIos');
+    const btnAndroid = document.getElementById('btnAndroid');
+    const badge      = document.getElementById('detectedBadge');
+    const badgeText  = document.getElementById('badgeText');
+
+    btnIos.href     = STORES.ios;
+    btnAndroid.href = STORES.android;
+
+    const ua        = navigator.userAgent;
+    const isIOS     = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
+
+    if (isIOS) {
+      btnIos.classList.add('primary-store');
+      btnAndroid.classList.add('secondary-store');
+      badgeText.textContent = 'iPhone / iPad détecté — App Store recommandé';
+      badge.classList.add('show');
+    } else if (isAndroid) {
+      btnAndroid.classList.add('primary-store');
+      btnIos.classList.add('secondary-store');
+      badgeText.textContent = 'Android détecté — Google Play recommandé';
+      badge.classList.add('show');
+    } else {
+      btnIos.classList.add('primary-store');
+      btnAndroid.classList.add('primary-store');
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>
