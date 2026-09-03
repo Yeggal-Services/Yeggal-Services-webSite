@@ -1,553 +1,684 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yeggal Services — Trouvez le bon professionnel au Sénégal</title>
-<meta name="description" content="Yeggal Services met en relation les clients et les professionnels au Sénégal. Trouvez un prestataire, développez votre activité et gérez vos services depuis votre smartphone.">
-<meta name="keywords" content="services au Sénégal, trouver un professionnel au Sénégal, prestataire de services Sénégal, plateforme de services Sénégal, application services Sénégal, trouver un artisan Sénégal, services à domicile Sénégal">
-<meta property="og:title" content="Yeggal Services — Trouvez le bon professionnel au Sénégal">
-<meta property="og:description" content="La plateforme qui connecte les clients et les professionnels, partout au Sénégal.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_SN">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Yeggal Services",
-  "description": "Plateforme qui connecte les clients avec des professionnels qualifiés au Sénégal.",
-  "areaServed": "SN",
-  "sameAs": []
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style/index.css">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeggal - Connecter clients et prestataires à Dakar</title>
+    <meta name="description" content="Trouvez rapidement des prestataires de confiance à Dakar. Services de qualité, vérifiés et à proximité.">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
-
-<!-- ============ NAV ============ -->
-<nav class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a href="#" class="logo" aria-label="Yeggal Services, accueil"><img src="images/yeggal-logo.png" alt="Yeggal Services"></a>
-    <div class="nav-links">
-      <a href="#accueil">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#comment-ca-marche">Comment ça marche</a>
-      <a href="#professionnels">Professionnels</a>
-      <a href="#a-propos">À propos</a>
-      <a href="#faq">FAQ</a>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
     </div>
-    <div class="nav-cta">
-      <a href="#telecharger" class="btn btn-outline nav-download">Télécharger l'application</a>
-      <div class="burger" id="burgerBtn"><span></span><span></span><span></span></div>
-    </div>
-  </div>
-</nav>
 
-<div class="mobile-drawer" id="mobileDrawer">
-  <a href="#accueil">Accueil</a>
-  <a href="#services">Services</a>
-  <a href="#comment-ca-marche">Comment ça marche</a>
-  <a href="#professionnels">Professionnels</a>
-  <a href="#a-propos">À propos</a>
-  <a href="#faq">FAQ</a>
-  <a href="#telecharger" class="btn btn-primary">Télécharger l'application</a>
-</div>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="accueil">
-  <div class="hero-bg-shape"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow-pin">
-        <span class="flag"><img src="https://flagcdn.com/w40/sn.png" alt="Sénégal"></span>
-        Disponible partout au Sénégal
-      </div>
-      <h1>Trouvez le bon professionnel. Réalisez vos projets.</h1>
-      <p class="hero-sub">Yeggal Services met en relation les clients avec des professionnels qualifiés, partout au Sénégal.</p>
-      <div class="hero-ctas">
-        <a href="#services" class="btn btn-primary">Trouver un professionnel</a>
-        <a href="#professionnels" class="btn btn-outline">Devenir prestataire</a>
-      </div>
-      <div class="hero-stores">
-        <a href="#" class="store-btn" aria-label="Télécharger sur l'App Store">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.86-3.12.42-1.13-.46-2.16-.48-3.35 0-1.5.62-2.29.44-3.16-.42C2.79 15.6 3.51 8.32 8.99 8.02c1.32.07 2.24.72 3 .78.95-.19 1.86-.85 3.14-.75 1.5.12 2.65.7 3.4 1.85-3.03 1.85-2.56 5.7.36 6.9-.53 1.4-1.22 2.79-1.84 3.48zM12.03 7.9c-.16-2.44 1.85-4.55 4.12-4.7.29 2.29-2.09 4.9-4.12 4.7z"/></svg>
-          <span class="store-txt"><small>Télécharger sur</small><strong>App Store</strong></span>
-        </a>
-        <a href="#" class="store-btn" aria-label="Disponible sur Google Play">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.3.3-.5.8-.5 1.4v16c0 .6.2 1.1.5 1.4l.1.1L13 12 3.7 2.5l-.1.1zM16 9l-2.7-2.7L4 15.7 16 9zm0 6l-2.7 2.7L4 8.3 16 15zm.9-6.5L20 10.4c.6.4.6 1.2 0 1.6l-3.1 1.9-2.9-3 2.9-3.4z"/></svg>
-          <span class="store-txt"><small>Disponible sur</small><strong>Google Play</strong></span>
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="avatar-stack">
-          <span class="avatar-one"></span>
-          <span class="avatar-two"></span>
-          <span class="avatar-three"></span>
+    <!-- Construction Banner -->
+    <!-- <div class="construction-banner" id="construction-banner">
+        <div class="construction-content">
+            <i class="fas fa-tools" aria-hidden="true"></i>
+            <span class="construction-text">Site en cours de développement — Bientôt disponible!</span>
+            <button class="construction-close" onclick="closeBanner()" aria-label="Fermer la bannière" title="Fermer">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
         </div>
-        <p>Rejoint par des clients et des professionnels à travers le pays</p>
-      </div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="hv-card hv-main">
-        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&auto=format&fit=crop&q=80" alt="Professionnel sénégalais au travail">
-      </div>
-      <div class="hv-card hv-float-1">
-        <div class="icon-badge"><i data-lucide="smartphone" size="20"></i></div>
-        <div>
-          <strong>Demande envoyée</strong>
-          <span>Un plombier a accepté</span>
-        </div>
-      </div>
-      <div class="hv-card hv-float-2">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80" alt="Cliente satisfaite">
-        <div class="stars">★★★★★</div>
-        <p>« Service rapide et sérieux »</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </div> -->
 
-<!-- ============ TRUST / VALUE PROP ============ -->
-<section class="bg-pale">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag">Pourquoi Yeggal</div>
-      <h2>Des services plus simples, plus proches, plus fiables.</h2>
-    </div>
-    <div class="trust-grid reveal">
-      <div class="trust-item">
-        <div class="ic"><i data-lucide="shield-check"></i></div>
-        <h3>Professionnels vérifiés</h3>
-        <p>Trouvez des prestataires sérieux et qualifiés pour chaque type de besoin.</p>
-      </div>
-      <div class="trust-item">
-        <div class="ic"><i data-lucide="map-pin"></i></div>
-        <h3>Proche de chez vous</h3>
-        <p>Accédez à des services disponibles directement dans votre zone.</p>
-      </div>
-      <div class="trust-item">
-        <div class="ic"><i data-lucide="zap"></i></div>
-        <h3>Simple et rapide</h3>
-        <p>Publiez votre besoin et trouvez le professionnel adapté en quelques minutes.</p>
-      </div>
-      <div class="trust-item">
-        <div class="ic"><i data-lucide="heart-handshake"></i></div>
-        <h3>Pensée pour le Sénégal</h3>
-        <p>Une solution adaptée aux réalités des clients et des travailleurs sénégalais.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag">Nos catégories</div>
-      <h2>Un professionnel pour chaque besoin.</h2>
-      <p>Des dizaines de métiers, disponibles à Dakar et dans les grandes villes du pays.</p>
-    </div>
-    <div class="services-scroller reveal">
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1607472829760-a2ea1c1c81b8?w=500&auto=format&fit=crop&q=70" alt="Plomberie"><div class="sc-content"><div class="sc-icon"><i data-lucide="wrench" size="18"></i></div><h4>Plomberie</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&auto=format&fit=crop&q=70" alt="Électricité"><div class="sc-content"><div class="sc-icon"><i data-lucide="zap" size="18"></i></div><h4>Électricité</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&auto=format&fit=crop&q=70" alt="Ménage"><div class="sc-content"><div class="sc-icon"><i data-lucide="sparkles" size="18"></i></div><h4>Ménage</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=70" alt="Réparation"><div class="sc-content"><div class="sc-icon"><i data-lucide="hammer" size="18"></i></div><h4>Réparation</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500&auto=format&fit=crop&q=70" alt="Peinture"><div class="sc-content"><div class="sc-icon"><i data-lucide="paintbrush" size="18"></i></div><h4>Peinture</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&auto=format&fit=crop&q=70" alt="Coiffure & beauté"><div class="sc-content"><div class="sc-icon"><i data-lucide="scissors" size="18"></i></div><h4>Coiffure & beauté</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&auto=format&fit=crop&q=70" alt="Transport"><div class="sc-content"><div class="sc-icon"><i data-lucide="car" size="18"></i></div><h4>Transport</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1600321295134-eecdfe7dbe37?w=500&auto=format&fit=crop&q=70" alt="Livraison"><div class="sc-content"><div class="sc-icon"><i data-lucide="package" size="18"></i></div><h4>Livraison</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&auto=format&fit=crop&q=70" alt="Construction"><div class="sc-content"><div class="sc-icon"><i data-lucide="hard-hat" size="18"></i></div><h4>Construction</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=70" alt="Informatique"><div class="sc-content"><div class="sc-icon"><i data-lucide="laptop" size="18"></i></div><h4>Informatique</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=70" alt="Entretien"><div class="sc-content"><div class="sc-icon"><i data-lucide="leaf" size="18"></i></div><h4>Entretien</h4></div></div>
-      <div class="service-card"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&auto=format&fit=crop&q=70" alt="Cours particuliers"><div class="sc-content"><div class="sc-icon"><i data-lucide="book-open" size="18"></i></div><h4>Cours particuliers</h4></div></div>
-    </div>
-    <div class="services-footer reveal">
-      <p class="services-note">Et bien d'autres services disponibles sur l'application.</p>
-      <a href="#" class="link-arrow">Voir tous les services <i data-lucide="arrow-right" size="16"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section class="bg-pale" id="comment-ca-marche">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag">Pour les clients</div>
-      <h2>Besoin d'un service ? Quelques étapes suffisent.</h2>
-    </div>
-    <div class="how-grid">
-      <div class="timeline reveal">
-        <div class="tl-step">
-          <div class="tl-num">01</div>
-          <h4>Décrivez votre besoin</h4>
-          <p>Indiquez le service dont vous avez besoin et les détails utiles.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-num">02</div>
-          <h4>Découvrez les professionnels</h4>
-          <p>Consultez les prestataires disponibles près de chez vous.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-num">03</div>
-          <h4>Choisissez votre professionnel</h4>
-          <p>Comparez les profils et choisissez celui qui vous convient le mieux.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-num">04</div>
-          <h4>Réalisez votre projet</h4>
-          <p>Échangez directement avec le professionnel et faites réaliser votre service.</p>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="phone-mock">
-          <div class="phone-notch"></div>
-          <div class="screen">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&auto=format&fit=crop&q=80" alt="Aperçu de l'application Yeggal">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOR WORKERS ============ -->
-<section id="professionnels">
-  <div class="wrap pro-grid">
-    <div class="pro-img reveal">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80" alt="Professionnel sénégalais">
-      <div class="pro-badge">
-        <span class="num">+</span>
-        <span class="lbl">Opportunités adaptées à vos compétences, chaque semaine</span>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="section-tag">Pour les professionnels</div>
-      <h2 class="pro-title">Vous êtes professionnel ? Développez votre activité avec Yeggal.</h2>
-      <p class="pro-description">Trouvez de nouveaux clients, développez votre visibilité et recevez des opportunités adaptées à vos compétences.</p>
-      <div class="benefit-list">
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Trouvez de nouveaux clients</div>
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Présentez vos compétences</div>
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Développez votre visibilité</div>
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Recevez des demandes de services</div>
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Gérez votre activité depuis votre téléphone</div>
-        <div class="benefit-item"><i data-lucide="check-circle" size="19"></i>Construisez votre réputation</div>
-      </div>
-      <div class="pro-ctas">
-        <a href="#" class="btn btn-primary">Devenir prestataire</a>
-        <a href="#telecharger" class="btn btn-outline">Télécharger l'application</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TWO-SIDED MARKETPLACE ============ -->
-<section class="bg-pale">
-  <div class="wrap">
-    <div class="section-head reveal market-heading">
-      <div class="section-tag">L'écosystème Yeggal</div>
-      <h2>Deux besoins, une seule plateforme.</h2>
-    </div>
-    <div class="market-wrap reveal">
-      <div class="market-side clients">
-        <h3>Vous avez besoin d'un service ?</h3>
-        <p>Publiez votre besoin et trouvez rapidement le bon professionnel, où que vous soyez au Sénégal.</p>
-        <a href="#services" class="btn btn-primary full-width">Trouver un professionnel</a>
-      </div>
-      <div class="market-center">YEGGAL<br>SERVICES</div>
-      <div class="market-side pros">
-        <h3>Vous proposez un service ?</h3>
-        <p>Connectez-vous avec des clients qui recherchent exactement vos compétences.</p>
-        <a href="#" class="btn btn-outline full-width">Rejoindre Yeggal</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ APP SHOWCASE ============ -->
-<section class="bg-navy" id="telecharger">
-  <div class="wrap showcase-wrap">
-    <div class="section-head reveal showcase-heading">
-      <div class="section-tag light-tag">L'application</div>
-      <h2 class="light-heading">Tout Yeggal Services dans votre poche.</h2>
-      <p class="light-description">Découvrez une expérience simple et intuitive pour trouver des services ou développer votre activité, directement depuis votre smartphone.</p>
-    </div>
-    <div class="showcase-phones reveal">
-      <div class="sp sp-l"><div class="screen"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&auto=format&fit=crop&q=80" alt="Catégories de services"></div></div>
-      <div class="sp sp-c"><div class="screen"><img src="https://images.unsplash.com/photo-1585079542156-2755d9c8a094?w=500&auto=format&fit=crop&q=80" alt="Accueil de l'application Yeggal"></div></div>
-      <div class="sp sp-r"><div class="screen"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80" alt="Messagerie avec un professionnel"></div></div>
-    </div>
-    <div class="store-row reveal">
-      <a href="#" class="store-btn store-btn-light">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.86-3.12.42-1.13-.46-2.16-.48-3.35 0-1.5.62-2.29.44-3.16-.42C2.79 15.6 3.51 8.32 8.99 8.02c1.32.07 2.24.72 3 .78.95-.19 1.86-.85 3.14-.75 1.5.12 2.65.7 3.4 1.85-3.03 1.85-2.56 5.7.36 6.9-.53 1.4-1.22 2.79-1.84 3.48zM12.03 7.9c-.16-2.44 1.85-4.55 4.12-4.7.29 2.29-2.09 4.9-4.12 4.7z"/></svg>
-        <span class="store-txt"><small>Télécharger sur</small><strong>l'App Store</strong></span>
-      </a>
-      <a href="#" class="store-btn store-btn-light">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.3.3-.5.8-.5 1.4v16c0 .6.2 1.1.5 1.4l.1.1L13 12 3.7 2.5l-.1.1zM16 9l-2.7-2.7L4 15.7 16 9zm0 6l-2.7 2.7L4 8.3 16 15zm.9-6.5L20 10.4c.6.4.6 1.2 0 1.6l-3.1 1.9-2.9-3 2.9-3.4z"/></svg>
-        <span class="store-txt"><small>Disponible sur</small><strong>Google Play</strong></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY YEGGAL ============ -->
-<section class="bg-navy why-section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag light-tag">Notre positionnement</div>
-      <h2 class="light-heading">Pourquoi choisir Yeggal Services ?</h2>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-item"><span class="n">01</span><h3>Confiance</h3><p>Des profils et services présentés clairement, sans mauvaise surprise.</p></div>
-      <div class="why-item"><span class="n">02</span><h3>Proximité</h3><p>Des professionnels disponibles au Sénégal, proches de chez vous.</p></div>
-      <div class="why-item"><span class="n">03</span><h3>Simplicité</h3><p>Une expérience pensée pour être comprise par tous, sans complexité.</p></div>
-      <div class="why-item"><span class="n">04</span><h3>Opportunités</h3><p>Une nouvelle manière pour les professionnels de trouver des clients.</p></div>
-      <div class="why-item"><span class="n">05</span><h3>Accessibilité</h3><p>Une plateforme accessible depuis n'importe quel smartphone.</p></div>
-      <div class="why-item"><span class="n">06</span><h3>Local</h3><p>Une solution conçue pour le marché et les réalités sénégalaises.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SENEGAL SECTION ============ -->
-<section id="a-propos">
-  <div class="wrap sn-grid">
-    <div class="reveal">
-      <div class="section-tag">Notre ancrage</div>
-      <h2 class="pro-title">Pensé au Sénégal. Pour le Sénégal.</h2>
-      <p class="pro-description">Yeggal Services a pour ambition de connecter les clients et les professionnels partout au Sénégal, ville par ville, quartier par quartier.</p>
-      <div class="stat-row">
-        <div class="stat-item"><div class="stat-num">[X]+</div><div class="stat-lbl">Professionnels</div></div>
-        <div class="stat-item"><div class="stat-num">[X]+</div><div class="stat-lbl">Clients</div></div>
-        <div class="stat-item"><div class="stat-num">[X]+</div><div class="stat-lbl">Services</div></div>
-        <div class="stat-item"><div class="stat-num">[X]</div><div class="stat-lbl">Villes couvertes</div></div>
-      </div>
-      <p class="stats-note">Statistiques à intégrer dès qu'elles seront disponibles.</p>
-    </div>
-    <div class="sn-map reveal">
-      <img src="https://images.unsplash.com/photo-1591017683993-8b8be8ce5b90?w=800&auto=format&fit=crop&q=80" alt="Vue urbaine au Sénégal">
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="bg-pale">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag">Avis</div>
-      <h2>Ils font confiance à Yeggal.</h2>
-    </div>
-    <div class="testi-row reveal">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">« J'ai trouvé un électricien disponible le jour même, à deux pas de chez moi. Simple et rapide. »</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=faces" alt="Cliente">
-          <div><strong>Aïda D.</strong><span>Cliente, Dakar</span></div>
-        </div>
-        <p class="placeholder-tag">Témoignage à remplacer par un avis réel</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">« Depuis que je suis sur Yeggal, je reçois régulièrement des demandes de clients dans mon quartier. »</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces" alt="Prestataire">
-          <div><strong>Moussa K.</strong><span>Électricien indépendant, Thiès</span></div>
-        </div>
-        <p class="placeholder-tag">Témoignage à remplacer par un avis réel</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">« Une plateforme claire, qui nous a permis de trouver des prestataires fiables pour notre atelier. »</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=faces" alt="Petite entreprise">
-          <div><strong>Fatou S.</strong><span>Petite entreprise, Saint-Louis</span></div>
-        </div>
-        <p class="placeholder-tag">Témoignage à remplacer par un avis réel</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">« Le contact avec les clients est direct et clair. Ça change vraiment ma façon de trouver du travail. »</p>
-        <div class="testi-person">
-          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=faces" alt="Professionnel">
-          <div><strong>Ibrahima N.</strong><span>Peintre, Dakar</span></div>
-        </div>
-        <p class="placeholder-tag">Témoignage à remplacer par un avis réel</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ APP DOWNLOAD CTA ============ -->
-<section>
-  <div class="wrap">
-    <div class="download-banner reveal">
-      <div class="db-grid">
-        <div>
-          <h2>Votre prochain service est à portée de main.</h2>
-          <p>Téléchargez Yeggal Services et trouvez facilement le professionnel qu'il vous faut.</p>
-          <div class="store-row download-store-row">
-            <a href="#" class="btn-ghost-white btn download-store-btn">App Store</a>
-            <a href="#" class="btn-ghost-white btn download-store-btn">Google Play</a>
-          </div>
-          <div class="db-secondary">
-            <span>Vous êtes professionnel ? Rejoignez-nous.</span>
-            <a href="#" class="btn btn-outline db-pro-btn">Devenir prestataire</a>
-          </div>
-        </div>
-        <div class="download-phone-wrap">
-          <div class="phone-mock download-phone">
-            <div class="phone-notch download-notch"></div>
-            <div class="screen">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&auto=format&fit=crop&q=80" alt="Application Yeggal Services">
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="images/yeggal-logo.png" alt="Logo Yeggal" class="logo-image">
+                <span>Yëggal Services</span>
             </div>
-          </div>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#fonctionnement">Comment ça marche</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#demande" class="nav-cta">Demander un service</a>
+                <a href="prestataire.html" class="nav-link-secondary">Devenir prestataire</a>
+            </div>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#fonctionnement">Comment ça marche</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="#demande" class="mobile-cta">Demander un service</a>
+                <a href="prestataire.html" class="mobile-link-secondary">Devenir prestataire</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!-- ============ FAQ ============ -->
-<section id="faq">
-  <div class="wrap faq-wrap">
-    <div class="section-head reveal">
-      <div class="section-tag">Questions fréquentes</div>
-      <h2>Une question ? On répond.</h2>
-    </div>
-    <div class="faq-list reveal" id="faqList">
-      <div class="faq-item">
-        <button class="faq-q">Qu'est-ce que Yeggal Services ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Yeggal Services est une plateforme qui connecte les clients avec des professionnels qualifiés partout au Sénégal, pour tout type de service.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Comment trouver un professionnel ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Publiez votre besoin sur l'application, consultez les professionnels disponibles dans votre zone, puis choisissez celui qui vous convient.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Quels types de services sont disponibles ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Plomberie, électricité, ménage, réparation, peinture, coiffure et beauté, transport, livraison, construction, informatique, entretien, cours particuliers, et bien d'autres.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Comment devenir prestataire ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Téléchargez l'application, créez votre profil professionnel, présentez vos compétences et commencez à recevoir des demandes.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Yeggal Services est-il disponible partout au Sénégal ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Yeggal Services a pour ambition de couvrir progressivement l'ensemble du territoire, en commençant par les principales villes.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Comment contacter un professionnel ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Une fois votre demande publiée, vous pouvez échanger directement avec le professionnel via la messagerie intégrée à l'application.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Comment télécharger l'application ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">L'application Yeggal Services est disponible gratuitement sur l'App Store et sur Google Play.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">L'application est-elle disponible sur Android ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Oui, l'application est disponible sur Google Play pour tous les appareils Android.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">L'application est-elle disponible sur iPhone ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Oui, l'application est disponible sur l'App Store pour tous les iPhone.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Comment fonctionne la mise en relation ? <i data-lucide="plus" size="20"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Yeggal Services analyse votre demande et vous propose des professionnels qualifiés et disponibles dans votre zone, que vous pouvez ensuite comparer et contacter.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="hero-intro">
+                <h1>Trouvez des prestataires de confiance à Dakar</h1>
+                <p>Connectez-vous facilement avec des professionnels vérifiés dans votre quartier. Rapide, sécurisé et transparent.</p>
+                <ul class="hero-benefits">
+                    <li><i class="fas fa-user-shield" aria-hidden="true"></i> Prestataires contrôlés et notés</li>
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i> Devis reçus en moins de 2 heures</li>
+                    <li><i class="fas fa-wallet" aria-hidden="true"></i> Prix transparents sans mauvaise surprise</li>
+                </ul>
+            </div>
 
-<!-- ============ FINAL CTA ============ -->
-<section class="final-cta bg-pale">
-  <div class="wrap">
-    <h2 class="reveal">Que vous cherchiez un service ou des clients, Yeggal est là pour vous.</h2>
-    <div class="final-ctas reveal">
-      <a href="#services" class="btn btn-primary">Je cherche un professionnel</a>
-      <a href="#professionnels" class="btn btn-outline">Je suis professionnel</a>
-    </div>
-    <div class="final-download reveal">
-      <p>Téléchargez l'application Yeggal Services</p>
-      <div class="store-row">
-        <a href="#" class="store-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.86-3.12.42-1.13-.46-2.16-.48-3.35 0-1.5.62-2.29.44-3.16-.42C2.79 15.6 3.51 8.32 8.99 8.02c1.32.07 2.24.72 3 .78.95-.19 1.86-.85 3.14-.75 1.5.12 2.65.7 3.4 1.85-3.03 1.85-2.56 5.7.36 6.9-.53 1.4-1.22 2.79-1.84 3.48zM12.03 7.9c-.16-2.44 1.85-4.55 4.12-4.7.29 2.29-2.09 4.9-4.12 4.7z"/></svg>
-          <span class="store-txt"><small>Télécharger sur</small><strong>App Store</strong></span>
-        </a>
-        <a href="#" class="store-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.3.3-.5.8-.5 1.4v16c0 .6.2 1.1.5 1.4l.1.1L13 12 3.7 2.5l-.1.1zM16 9l-2.7-2.7L4 15.7 16 9zm0 6l-2.7 2.7L4 8.3 16 15zm.9-6.5L20 10.4c.6.4.6 1.2 0 1.6l-3.1 1.9-2.9-3 2.9-3.4z"/></svg>
-          <span class="store-txt"><small>Disponible sur</small><strong>Google Play</strong></span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- <div class="hero-actions">
+                <a href="#demande" class="btn btn-primary" aria-label="Demander un service maintenant">Demander un service</a>
+                <div class="hero-proof" role="status">
+                    <div class="hero-rating">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                    </div>
+                    <p>Note moyenne 4.8/5 sur 1 200 missions</p>
+                </div>
+            </div> -->
 
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="logo"><img src="images/yeggal-logo.png" alt="Yeggal Services"></div>
-        <p>La plateforme qui connecte les clients et les professionnels au Sénégal.</p>
-        <div class="footer-badges">
-          <a href="#" class="store-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.86-3.12.42-1.13-.46-2.16-.48-3.35 0-1.5.62-2.29.44-3.16-.42C2.79 15.6 3.51 8.32 8.99 8.02c1.32.07 2.24.72 3 .78.95-.19 1.86-.85 3.14-.75 1.5.12 2.65.7 3.4 1.85-3.03 1.85-2.56 5.7.36 6.9-.53 1.4-1.22 2.79-1.84 3.48zM12.03 7.9c-.16-2.44 1.85-4.55 4.12-4.7.29 2.29-2.09 4.9-4.12 4.7z"/></svg><span class="store-txt"><strong class="footer-store-name">App Store</strong></span></a>
-          <a href="#" class="store-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6c-.3.3-.5.8-.5 1.4v16c0 .6.2 1.1.5 1.4l.1.1L13 12 3.7 2.5l-.1.1zM16 9l-2.7-2.7L4 15.7 16 9zm0 6l-2.7 2.7L4 8.3 16 15zm.9-6.5L20 10.4c.6.4.6 1.2 0 1.6l-3.1 1.9-2.9-3 2.9-3.4z"/></svg><span class="store-txt"><strong class="footer-store-name">Google Play</strong></span></a>
+            <div class="download-buttons">
+                <a href="#" class="download-btn" id="android-download">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">Google Play</span>
+                    </div>
+                </a>
+                <a href="#" class="download-btn" id="ios-download">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="cta-secondary">
+                <a href="prestataire.html" class="btn btn-outline">
+                    <i class="fas fa-user-tie"></i>
+                    Devenir prestataire
+                </a>
+            </div>
         </div>
-      </div>
-      <div>
-        <h4>CLIENTS</h4>
-        <ul>
-          <li><a href="#services">Trouver un professionnel</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#comment-ca-marche">Comment ça marche</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>PROFESSIONNELS</h4>
-        <ul>
-          <li><a href="#professionnels">Devenir prestataire</a></li>
-          <li><a href="#professionnels">Trouver des clients</a></li>
-          <li><a href="#professionnels">Avantages</a></li>
-          <li><a href="#telecharger">Application</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>ENTREPRISE</h4>
-        <ul>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Carrières</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>SUPPORT</h4>
-        <ul>
-          <li><a href="#">Centre d'aide</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#">Nous contacter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <small>© 2026 Yeggal Services. Tous droits réservés. · <a href="#" class="footer-legal-link">Confidentialité</a> · <a href="#" class="footer-legal-link">Conditions générales</a> · <a href="#" class="footer-legal-link">Mentions légales</a></small>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook"><i data-lucide="facebook" size="16" color="#fff"></i></a>
-        <a href="#" aria-label="Instagram"><i data-lucide="instagram" size="16" color="#fff"></i></a>
-        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" size="16" color="#fff"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
+    <!-- Trust Indicators -->
+    <!-- <section class="trustbar animate-on-scroll" aria-label="Partenaires et garanties">
+        <div class="container">
+            <p class="trustbar-title">Ils nous font déjà confiance</p>
+            <div class="trustbar-logos">
+                <span>Orange</span>
+                <span>Sonatel</span>
+                <span>SEDIMA</span>
+                <span>Auchan</span>
+                <span>CityDia</span>
+            </div>
+        </div>
+    </section> -->
 
-<script src="js/index.js" defer></script>
+    <!-- Features Section -->
+    <section class="features animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Yeggal ?</h2>
+            <p class="section-subtitle">Une plateforme conçue pour simplifier vos recherches de services et garantir votre satisfaction</p>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Prestataires vérifiés</h3>
+                    <p>Tous nos prestataires sont vérifiés avec documents et références. Travaillez en toute confiance avec des professionnels qualifiés.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Service rapide</h3>
+                    <p>Trouvez un prestataire en quelques minutes. Réponses dans la journée garanties pour tous vos besoins urgents.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-map-marker-alt feature-icon"></i>
+                    <h3>Proximité</h3>
+                    <p>Des prestataires dans votre quartier. Réduisez les délais et les frais de déplacement pour un service plus efficace.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-comments feature-icon"></i>
+                    <h3>Communication directe</h3>
+                    <p>Chattez directement avec les prestataires. Négociez et organisez votre service facilement via notre système de messagerie intégré.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-star feature-icon"></i>
+                    <h3>Avis clients</h3>
+                    <p>Consultez les avis et notes des autres clients pour faire le meilleur choix. Système de notation transparent et fiable.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>App mobile</h3>
+                    <p>Interface simple et intuitive. Accessible même avec une connexion faible. Disponible sur iOS et Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works animate-on-scroll" id="fonctionnement">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <p class="section-subtitle">En quelques étapes simples, trouvez le prestataire idéal pour vos besoins</p>
+            <div class="steps">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Décrivez votre besoin</h3>
+                    <p>Publiez votre demande en détaillant le service recherché, votre localisation et votre budget.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>Recevez des propositions</h3>
+                    <p>Les prestataires qualifiés vous contactent avec leurs devis personnalisés en quelques heures.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Choisissez et planifiez</h3>
+                    <p>Comparez les profils, lisez les avis et choisissez le prestataire qui vous convient le mieux.</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Service réalisé</h3>
+                    <p>Le prestataire réalise votre service. Évaluez la prestation pour aider la communauté.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services animate-on-scroll" id="services">
+        <div class="container">
+            <h2 class="section-title">Services disponibles</h2>
+            <p class="section-subtitle">Plus de 50 catégories de services pour répondre à tous vos besoins du quotidien</p>
+            <div class="services-grid">
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-wrench"></i>
+                    <h4>Plomberie</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Électricité</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-broom"></i>
+                    <h4>Ménage</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Réparation téléphone</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-car"></i>
+                    <h4>Mécanique</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-cut"></i>
+                    <h4>Couture</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Peinture</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Informatique</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-homde"></i>
+                    <h4>Jardinage</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Traiteur</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-camera"></i>
+                    <h4>Photographie</h4>
+                </div>
+                <div class="service-item animate-on-scroll">
+                    <i class="fas fa-hammer"></i>
+                    <h4>Menuiserie</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats animate-on-scroll">
+        <h2 class="section-title">Statistiques</h2>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="prestataires-count">0</h3>
+                    <p>Prestataires actifs</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="services-count">0</h3>
+                    <p>Services réalisés</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="clients-count">0</h3>
+                    <p>Clients satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="quartiers-count">0</h3>
+                    <p>Quartiers couverts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section class="testimonials animate-on-scroll" id="temoignages">
+        <div class="container">
+            <h2 class="section-title">Ils parlent de Yeggal</h2>
+            <p class="section-subtitle">Des clients et prestataires satisfaits recommandent notre plateforme</p>
+            <div class="testimonial-grid">
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« Grâce à Yeggal, j’ai trouvé un électricien fiable en moins d’une heure. Intervention rapide et prix correct. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">AM</div>
+                        <div>
+                            <h4>Aminata Mbaye</h4>
+                            <p>Cliente, Almadies</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« En tant que prestataire, je reçois des demandes régulières et je peux choisir les missions qui me conviennent. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">MD</div>
+                        <div>
+                            <h4>Mamadou Diop</h4>
+                            <p>Plombier, Parcelles</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 4,5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-text">« Le suivi client est impeccable. L’équipe m’a aidée à sélectionner le meilleur prestataire pour mon chantier. »</p>
+                    <div class="testimonial-footer">
+                        <div class="author-avatar" aria-hidden="true">FN</div>
+                        <div>
+                            <h4>Fatou Ndiaye</h4>
+                            <p>Chef d’entreprise, Plateau</p>
+                        </div>
+                        <div class="testimonial-rating" aria-label="Note 5 sur 5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Lead capture section -->
+    <section class="lead-section animate-on-scroll" id="demande">
+        <div class="container">
+            <div class="lead-wrapper">
+                <div class="lead-content">
+                    <h2 class="section-title">Décrivez votre besoin en 30 secondes</h2>
+                    <p class="section-subtitle">Un conseiller Yeggal vous rappelle rapidement pour sélectionner le meilleur prestataire.</p>
+                    <ul class="lead-benefits">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Accompagnement personnalisé gratuit</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Réseau de professionnels certifiés</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Paiement sécurisé après service rendu</li>
+                    </ul>
+                </div>
+                <form class="lead-form" aria-label="Formulaire de demande de service">
+                    <div class="form-group">
+                        <label for="lead-name">Votre prénom</label>
+                        <input type="text" id="lead-name" name="lead-name" placeholder="Ex: Awa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-phone">Téléphone</label>
+                        <input type="tel" id="lead-phone" name="lead-phone" placeholder="Ex: 77 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-service">Quel service recherchez-vous ?</label>
+                        <input type="text" id="lead-service" name="lead-service" placeholder="Plomberie, ménage, électricité…" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-location">Quartier</label>
+                        <input type="text" id="lead-location" name="lead-location" placeholder="Ex: Dakar Plateau" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-message">Détaillez votre besoin</label>
+                        <textarea id="lead-message" name="lead-message" rows="4" placeholder="Décrivez votre projet ou votre urgence"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Être rappelé(e)</button>
+                    <p class="form-success" role="status" aria-live="polite">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        Merci ! Notre équipe vous contactera dans les prochaines heures.
+                    </p>
+                    <p class="form-consent"><i class="fas fa-lock" aria-hidden="true"></i> Vos données sont protégées et ne seront jamais partagées.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section animate-on-scroll" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir avant de réserver un prestataire</p>
+            <div class="faq-grid">
+                <details>
+                    <summary>Comment sélectionnez-vous les prestataires ?</summary>
+                    <p>Chaque prestataire est vérifié par notre équipe à l’aide de ses pièces d’identité, références clients et vérifications de compétences. Les avis de la communauté permettent ensuite de maintenir des standards élevés.</p>
+                </details>
+                <details>
+                    <summary>Quels sont les délais de réponse ?</summary>
+                    <p>La plupart des demandes reçoivent une première proposition en moins de deux heures. Pour les urgences, contactez-nous directement afin de prioriser votre demande.</p>
+                </details>
+                <details>
+                    <summary>Comment se passe le paiement ?</summary>
+                    <p>Vous payez uniquement après la réalisation du service. Nous proposons un acompte sécurisé si nécessaire et un reçu détaillé est envoyé par e-mail.</p>
+                </details>
+                <details>
+                    <summary>Que se passe-t-il si je ne suis pas satisfait(e) ?</summary>
+                    <p>Notre équipe support intervient pour trouver une solution rapide. Nous pouvons organiser une nouvelle intervention ou un remboursement selon les conditions d’utilisation.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section animate-on-scroll">
+        <div class="container">
+            <h2>Prêt à commencer ?</h2>
+            <p>Rejoignez des milliers d'utilisateurs qui font confiance à Yeggal pour leurs besoins quotidiens</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">Google Play</span>
+                    </div>
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-text">
+                        <span class="small">Télécharger sur</span>
+                        <span class="large">App Store</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yeggal</h3>
+                    <p>La plateforme de référence pour trouver des prestataires de confiance à Dakar. Simplifiez vos recherches, économisez votre temps.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <!-- <a href="#">Pour les clients</a><br> -->
+                    <a href="prestataire.html">Pour les prestataires</a><br>
+                    <!-- <a href="#">Support</a><br>
+                    <a href="#">FAQ</a><br>
+                    <a href="#">Guide d'utilisation</a> -->
+                </div>
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <a href="conditions.html">Conditions d'utilisation</a><br>
+                    <a href="confidentialite.html">Politique de confidentialité</a><br>
+                    <!-- <a href="#">Mentions légales</a><br>
+                    <a href="#">Politique de remboursement</a><br>
+                    <a href="#">Charte de qualité</a> -->
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +221 77 XXX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> contact@yeggal.sn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</p>
+                    <p><i class="fas fa-clock"></i> Lun-Ven: 8h-18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yeggal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loading').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize banner visibility
+            const banner = document.getElementById('construction-banner');
+            if (banner && !sessionStorage.getItem('bannerClosed')) {
+                document.body.classList.add('banner-visible');
+            } else if (banner) {
+                banner.style.display = 'none';
+            }
+        });
+
+        // Close banner function
+        function closeBanner() {
+            const banner = document.getElementById('construction-banner');
+            banner.style.animation = 'slideOutUp 0.3s ease-out forwards';
+            setTimeout(() => {
+                banner.style.display = 'none';
+                document.body.classList.remove('banner-visible');
+                sessionStorage.setItem('bannerClosed', 'true');
+            }, 300);
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const scrollTop = document.getElementById('scroll-top');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            let current = start;
+            let increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Special handling for stats section
+                    if (entry.target.classList.contains('stats')) {
+                        if (!entry.target.dataset.counted) {
+                            animateCounter(document.getElementById('prestataires-count'), 780);
+                            animateCounter(document.getElementById('services-count'), 3200);
+                            animateCounter(document.getElementById('clients-count'), 1850);
+                            animateCounter(document.getElementById('quartiers-count'), 45);
+                            entry.target.dataset.counted = 'true';
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-nav').classList.remove('active');
+                }
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id], footer[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Download button click handlers
+        document.getElementById('android-download').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add your Google Play Store link here
+            window.open('https://play.google.com/store/apps/details?id=com.devall.yeggal', '_blank');
+            console.log('Redirecting to Google Play Store...');
+        });
+
+        document.getElementById('ios-download').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add your App Store link here
+             window.open('https://apps.apple.com/us/app/yeggal-services/id6757340219', '_blank');
+            console.log('Redirecting to App Store...');
+        });
+
+        // Parallax effect for hero section
+        let heroParallaxEnabled = window.innerWidth > 1024;
+        const hero = document.querySelector('.hero');
+
+        window.addEventListener('resize', () => {
+            heroParallaxEnabled = window.innerWidth > 1024;
+            if (!heroParallaxEnabled && hero) {
+                hero.style.transform = 'none';
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (!heroParallaxEnabled || !hero) return;
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.25}px)`;
+        });
+
+        const leadForm = document.querySelector('.lead-form');
+        if (leadForm) {
+            const successMessage = leadForm.querySelector('.form-success');
+            leadForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (successMessage) {
+                    successMessage.classList.add('visible');
+                    setTimeout(() => successMessage.classList.remove('visible'), 6000);
+                }
+                leadForm.reset();
+            });
+        }
+    </script>
 </body>
 </html>
-
-
