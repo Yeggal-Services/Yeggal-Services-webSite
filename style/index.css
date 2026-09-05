@@ -207,9 +207,16 @@
   }
   .phone-mock .screen{ width:100%; height:100%; border-radius:30px; overflow:hidden; background:var(--blue-mist); position:relative;}
   .phone-mock .screen img{width:100%; height:100%; object-fit:cover;}
+  .app-capture{
+    position:relative; margin:0 auto; width:280px; height:570px; max-width:100%;
+    overflow:hidden; border:1px solid rgba(10,28,54,.08); border-radius:28px;
+    background:#fff; box-shadow:0 24px 48px -28px rgba(10,28,54,.45);
+  }
+  .app-capture img{ width:100%; height:100%; object-fit:contain; border-radius:inherit; }
   .phone-notch{ position:absolute; top:14px; left:50%; transform:translateX(-50%); width:90px; height:22px; background:var(--navy); border-radius:20px; z-index:5;}
   @media (max-width:380px){
     .phone-mock{ width:230px; height:470px; padding:10px; border-radius:36px; }
+    .app-capture{ width:230px; height:470px; }
   }
 
   /* ---------- Professional Section ---------- */
@@ -252,6 +259,8 @@
   .sp{ position:relative; border-radius:36px; background:var(--navy); padding:10px; box-shadow:0 30px 60px -20px rgba(0,0,0,.5); }
   .sp .screen{ border-radius:26px; overflow:hidden; }
   .sp .screen img{width:100%; height:100%; object-fit:cover;}
+  .sp-standalone{ padding:0; border-radius:28px; background:transparent; box-shadow:none; }
+  .sp-standalone .screen{ border-radius:28px; }
   .sp-l{ width:180px; height:370px; margin-right:-30px; transform:rotate(-6deg) translateY(20px); opacity:.9; }
   .sp-c{ width:220px; height:450px; z-index:2; }
   .sp-r{ width:180px; height:370px; margin-left:-30px; transform:rotate(6deg) translateY(20px); opacity:.9; }
