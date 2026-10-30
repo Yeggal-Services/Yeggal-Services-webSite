@@ -1,0 +1,51 @@
+/* Gestion de compte — complete style/site.css */
+.account-layout { display: grid; gap: 22px; max-width: 920px; }
+.account-block { padding: 32px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.account-block > p { color: var(--text-2); }
+.block-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.block-head .icon-tile { margin: 0; flex: none; }
+.block-head h2 { margin: 0; font-size: clamp(21px, 2.4vw, 26px); }
+
+.data-box { margin-top: 18px; padding: 20px; border-radius: var(--radius-sm); background: var(--primary-soft); }
+.data-box h3 { font-size: 16px; margin-bottom: 12px; }
+.data-box ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+.data-box li { display: flex; gap: 10px; align-items: center; color: var(--text-2); font-size: 15px; }
+.data-box i { color: var(--primary); width: 18px; text-align: center; }
+
+.options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.option-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); transition: border-color .3s ease, transform .3s ease; }
+.option-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+.option-card h3 { font-size: 16.5px; margin: 4px 0 0; }
+.option-card p { color: var(--text-2); font-size: 14.5px; margin: 0 0 6px; flex: 1; }
+.opt-icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); }
+.opt-icon.amber { background: var(--accent-soft); color: var(--accent); }
+.edit-hint { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 0; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--primary-soft); color: var(--text); font-size: 15px; }
+.edit-hint i { color: var(--primary); margin-top: 4px; }
+.edit-hint.flash { animation: panelIn .45s ease; }
+
+.account-block.danger { border-color: color-mix(in srgb, var(--danger) 35%, var(--line)); }
+.notice-box { display: flex; gap: 14px; padding: 18px; border-radius: var(--radius-sm); background: var(--accent-soft); margin-bottom: 14px; }
+.notice-box > i { color: var(--accent); font-size: 20px; margin-top: 3px; }
+.notice-box h3 { font-size: 16px; margin-bottom: 4px; }
+.notice-box p { margin: 0; color: var(--text-2); }
+.danger-box { padding: 18px 20px; border-radius: var(--radius-sm); background: var(--danger-soft); border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent); }
+.danger-box h3 { display: flex; gap: 10px; align-items: center; color: var(--danger); font-size: 16.5px; }
+.danger-box p, .danger-box li { color: var(--text-2); }
+.danger-box ul { margin: 8px 0 0; padding-left: 20px; }
+.danger-actions { margin-top: 24px; text-align: center; }
+.btn-danger { background: var(--danger); color: #fff; box-shadow: 0 10px 24px color-mix(in srgb, var(--danger) 35%, transparent); }
+.btn-danger:hover { background: color-mix(in srgb, var(--danger) 85%, #000); }
+
+.modal { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: 20px; background: rgba(3, 8, 25, .6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.modal.active { opacity: 1; pointer-events: auto; }
+.modal-content { width: min(520px, 100%); padding: 32px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-lg); text-align: center; transform: translateY(20px) scale(.96); transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+.modal.active .modal-content { transform: none; }
+.modal-icon { width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; display: grid; place-items: center; font-size: 24px; background: var(--danger-soft); color: var(--danger); }
+.modal-content p { color: var(--text-2); }
+.modal-note { font-size: 14.5px; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+
+@media (max-width: 760px) {
+  .options, .data-box ul { grid-template-columns: 1fr; }
+  .account-block { padding: 24px 20px; }
+}

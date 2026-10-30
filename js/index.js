@@ -1,44 +1,51 @@
-lucide.createIcons();
+/* Accueil : mots qui defilent, onglets "comment ca marche", FAQ */
+document.addEventListener('DOMContentLoaded', function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Nav scroll effect
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
+  // Mots qui defilent dans le titre
+  var rotator = document.getElementById('rotator');
+  var words = ['plombier', 'électricien', 'menuisier', 'peintre', 'coiffeur', 'livreur', 'professeur', 'mécanicien'];
+  if (rotator && !reduce) {
+    var i = 0;
+    setInterval(function () {
+      rotator.classList.add('out');
+      setTimeout(function () {
+        i = (i + 1) % words.length;
+        rotator.textContent = words[i];
+        rotator.classList.remove('out');
+      }, 380);
+    }, 2400);
+  }
 
-  // Mobile drawer
-  const burger = document.getElementById('burgerBtn');
-  const drawer = document.getElementById('mobileDrawer');
-  burger.addEventListener('click', () => drawer.classList.toggle('open'));
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    q.setAttribute('aria-expanded', 'false');
-    q.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(other => {
-        if (other !== item) {
-          other.classList.remove('open');
-          other.querySelector('.faq-a').style.maxHeight = null;
-          other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-        }
+  // Onglets clients / prestataires
+  var tabs = document.querySelectorAll('.tab');
+  var indicator = document.querySelector('.tab-indicator');
+  function moveIndicator(tab) {
+    if (!indicator || !tab) return;
+    indicator.style.width = tab.offsetWidth + 'px';
+    indicator.style.transform = 'translateX(' + tab.offsetLeft + 'px)';
+  }
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var name = tab.getAttribute('data-tab');
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
       });
-      item.classList.toggle('open', !isOpen);
-      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
-      q.setAttribute('aria-expanded', String(!isOpen));
+      document.querySelectorAll('.steps').forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-panel') === name); });
+      document.querySelectorAll('[data-panel-img]').forEach(function (img) { img.classList.toggle('active', img.getAttribute('data-panel-img') === name); });
+      moveIndicator(tab);
     });
   });
+  moveIndicator(document.querySelector('.tab.active'));
+  window.addEventListener('resize', function () { moveIndicator(document.querySelector('.tab.active')); });
 
-  // Reveal on scroll
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-  }
+  // FAQ : une seule question ouverte a la fois
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) items.forEach(function (other) { if (other !== item) other.open = false; });
+    });
+  });
+});
