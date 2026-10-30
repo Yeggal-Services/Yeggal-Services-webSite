@@ -1,5 +1,5 @@
 /* Telechargement — complete style/site.css */
-.dl-hero { position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; padding: calc(var(--nav-h) + 40px) 0 80px; background: var(--hero-overlay); color: #fff; }
+.dl-hero { position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; padding: calc(var(--nav-h) + 40px) 0 80px; background: var(--hero-tint), url('../images/bg/hero-dakar.webp') center / cover no-repeat, #16308f; color: #fff; }
 .dl-orb { position: absolute; border-radius: 50%; filter: blur(30px); pointer-events: none; }
 .dl-orb-1 { width: 600px; height: 600px; right: -180px; top: -160px; background: radial-gradient(circle, rgba(79, 163, 255, .5), transparent 62%); animation: drift 16s ease-in-out infinite alternate; }
 .dl-orb-2 { width: 480px; height: 480px; left: -200px; bottom: -240px; background: radial-gradient(circle, rgba(245, 165, 36, .3), transparent 62%); animation: drift 20s ease-in-out infinite alternate-reverse; }
