@@ -1,598 +1,234 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devenir Prestataire - Yeggal</title>
-    <meta name="description" content="Rejoignez Yeggal comme prestataire et développez votre activité à Dakar. Inscription gratuite et commissions attractives.">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link rel="stylesheet" href="style/prestataire.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devenir prestataire — Yëggal Services</title>
+<meta name="description" content="Rejoignez Yëggal comme prestataire et développez votre activité au Sénégal. Inscription gratuite depuis l'application.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="theme-color" content="#ffffff">
+<script>(function(){var t;try{t=localStorage.getItem('yeggal-theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style/site.css">
+<link rel="stylesheet" href="style/prestataire.css">
 </head>
-<body>
-    <!-- Header -->
-    <header id="header">
-        <nav>
-             <div class="logo">
-                <img src="images/yeggal-logo.png" alt="Logo Yeggal" class="logo-image">
-                <span>Yëggal Services</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
-                <li><a href="#inscription">S'inscrire</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Ouvrir le menu" title="Ouvrir le menu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-        </nav>
-    </header>
+<body class="on-dark-hero">
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="site-nav" id="header">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Yëggal Services, accueil"><span class="brand-mark" aria-hidden="true"></span><span>Yëggal <b>Services</b></span></a>
+    <nav class="nav-menu" id="navMenu" aria-label="Navigation principale">
+      <a href="index.html" data-page="index">Accueil</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#comment-ca-marche">Comment ça marche</a>
+      <a href="prestataire.html" data-page="prestataire">Prestataires</a>
+      <a href="about.html" data-page="about">À propos</a>
+      <a href="blog.html" data-page="blog">Actualités</a>
+      <a href="aide.html" data-page="aide">Aide</a>
+      <a href="download.html" class="btn btn-primary nav-menu-cta">Télécharger l'application</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème (clair / sombre)"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
+      <a href="download.html" class="btn btn-primary btn-sm nav-download">Télécharger</a>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Développez votre activité avec Yeggal</h1>
-            <p>Rejoignez notre réseau de prestataires de confiance et accédez à de nouveaux clients chaque jour. Inscription gratuite et commissions attractives.</p>
-            <a href="#inscription" class="cta-button">
-                <i class="fas fa-rocket"></i>
-                Commencer maintenant
-            </a>
+<main>
+<section class="page-hero pro-hero">
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="container pro-hero-layout">
+    <div>
+      <nav class="breadcrumb reveal" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span>Prestataires</span></nav>
+      <span class="eyebrow reveal">Pour les professionnels</span>
+      <h1 class="reveal" style="--d:.08s">Développez votre activité avec Yëggal.</h1>
+      <p class="reveal" style="--d:.16s">Rejoignez notre réseau de prestataires de confiance et recevez des demandes de clients près de chez vous. L'inscription est gratuite.</p>
+      <div class="hero-actions reveal" style="--d:.24s">
+        <a href="#inscription" class="btn btn-light"><i class="fa-solid fa-rocket"></i>Commencer maintenant</a>
+        <a href="#avantages" class="btn btn-ghost">Voir les avantages</a>
+      </div>
+    </div>
+    <div class="pro-hero-visual reveal zoom" style="--d:.2s">
+      <img src="https://images.unsplash.com/photo-1687422808289-e721259c9eb4?w=800&auto=format&fit=crop&q=80" alt="Un tailleur travaille sur sa machine à coudre" loading="eager">
+      <div class="pv-card pv-1"><span class="pv-icon green"><i class="fa-solid fa-bell"></i></span><div><strong>3 nouvelles demandes</strong><small>dans votre quartier</small></div></div>
+      <div class="pv-card pv-2"><span class="pv-icon blue"><i class="fa-solid fa-circle-check"></i></span><div><strong>Profil vérifié</strong><small>badge de confiance</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Avantages -->
+<section class="section" id="avantages">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Les avantages</span>
+      <h2>Pourquoi devenir prestataire Yëggal ?</h2>
+      <p>Tout ce qu'il faut pour trouver des clients et gérer votre activité, depuis votre téléphone.</p>
+    </div>
+    <div class="benefit-grid" data-stagger=".07">
+      <article class="card" data-tilt="5"><div class="icon-tile"><i class="fa-solid fa-users"></i></div><h3>Nouveaux clients</h3><p>Accédez à une base de clients en croissance et recevez des demandes qualifiées chaque semaine.</p></article>
+      <article class="card" data-tilt="5"><div class="icon-tile green"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Gestion simplifiée</h3><p>Gérez vos demandes et échangez avec vos clients depuis une seule application.</p></article>
+      <article class="card" data-tilt="5"><div class="icon-tile amber"><i class="fa-solid fa-coins"></i></div><h3>Revenus supplémentaires</h3><p>Augmentez vos revenus avec des missions régulières. Fixez vos tarifs et gérez votre planning librement.</p></article>
+      <article class="card" data-tilt="5"><div class="icon-tile red"><i class="fa-solid fa-star"></i></div><h3>Réputation en ligne</h3><p>Construisez votre réputation grâce aux avis clients : mieux vous êtes noté, plus vous recevez de demandes.</p></article>
+      <article class="card" data-tilt="5"><div class="icon-tile"><i class="fa-solid fa-headset"></i></div><h3>Support dédié</h3><p>Bénéficiez d'un accompagnement et d'un support réactif pour développer votre activité.</p></article>
+      <article class="card" data-tilt="5"><div class="icon-tile green"><i class="fa-solid fa-map-location-dot"></i></div><h3>Visibilité locale</h3><p>Apparaissez sur la carte auprès des clients qui cherchent vos services dans votre zone.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Etapes -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Comment ça fonctionne</span>
+      <h2>4 étapes pour recevoir vos premiers clients.</h2>
+    </div>
+    <ol class="pro-steps" data-stagger=".1">
+      <li><span class="ps-num">1</span><h3>Inscrivez-vous</h3><p>Créez votre profil professionnel dans l'application : compétences, zone d'intervention et tarifs.</p></li>
+      <li><span class="ps-num">2</span><h3>Validation</h3><p>Notre équipe vérifie vos informations pour vous attribuer votre badge de confiance.</p></li>
+      <li><span class="ps-num">3</span><h3>Recevez des demandes</h3><p>Les clients vous contactent directement. Échangez et planifiez vos interventions.</p></li>
+      <li><span class="ps-num">4</span><h3>Développez-vous</h3><p>Réalisez vos prestations, collectez des avis et gagnez en visibilité.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Conditions requises -->
+<section class="section">
+  <div class="container req-layout">
+    <div class="section-head reveal from-left">
+      <span class="eyebrow">Conditions requises</span>
+      <h2>Des critères simples pour rejoindre le réseau.</h2>
+      <p>Ces éléments nous permettent de garantir la confiance entre clients et prestataires.</p>
+    </div>
+    <div class="req-grid" data-stagger=".06">
+      <div class="req"><i class="fa-solid fa-id-card"></i><div><h3>Pièce d'identité</h3><p>Carte d'identité nationale ou passeport en cours de validité.</p></div></div>
+      <div class="req"><i class="fa-solid fa-certificate"></i><div><h3>Compétences vérifiables</h3><p>Formation, certificats ou références clients démontrant votre expertise.</p></div></div>
+      <div class="req"><i class="fa-solid fa-location-dot"></i><div><h3>Zone d'intervention</h3><p>Pouvoir intervenir dans la zone où vous proposez vos services.</p></div></div>
+      <div class="req"><i class="fa-solid fa-phone"></i><div><h3>Contact disponible</h3><p>Un numéro de téléphone fonctionnel pour échanger avec les clients.</p></div></div>
+      <div class="req"><i class="fa-solid fa-screwdriver-wrench"></i><div><h3>Matériel professionnel</h3><p>Les outils et équipements nécessaires à des prestations de qualité.</p></div></div>
+      <div class="req"><i class="fa-solid fa-shield-halved"></i><div><h3>Engagement qualité</h3><p>Respecter nos standards de qualité et notre charte de bonne conduite.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Inscription -->
+<section class="section section-alt" id="inscription">
+  <div class="container">
+    <div class="signup reveal zoom">
+      <div class="signup-copy">
+        <span class="eyebrow">Inscription</span>
+        <h2>Inscrivez-vous directement dans l'application.</h2>
+        <p>La création de votre profil prestataire se fait en quelques minutes depuis l'application Yëggal Services, gratuitement.</p>
+        <ol class="signup-steps">
+          <li><i class="fa-solid fa-download"></i>Téléchargez l'application</li>
+          <li><i class="fa-solid fa-hand-pointer"></i>Choisissez « Je propose mes services »</li>
+          <li><i class="fa-solid fa-user-pen"></i>Complétez votre profil professionnel</li>
+        </ol>
+        <div class="signup-stores">
+          <a href="https://apps.apple.com/us/app/yeggal-services/id6757340219" target="_blank" rel="noopener" class="store-btn"><i class="fa-brands fa-apple"></i><span><small>Télécharger sur</small><strong>App Store</strong></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.devall.yeggal" target="_blank" rel="noopener" class="store-btn"><i class="fa-brands fa-google-play"></i><span><small>Disponible sur</small><strong>Google Play</strong></span></a>
         </div>
-    </section>
+      </div>
+      <div class="signup-phone">
+        <div class="phone"><img src="images/screens/bienvenue.webp" alt="Écran de choix du profil : Je cherche un service ou Je propose mes services" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Benefits Section -->
-    <section class="benefits animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title">Pourquoi devenir prestataire Yeggal ?</h2>
-            <p class="section-subtitle">Découvrez tous les avantages de rejoindre notre plateforme</p>
-            <div class="benefits-grid">
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-users benefit-icon"></i>
-                    <h3>Nouveaux clients</h3>
-                    <p>Accédez à une base de clients en croissance constante à Dakar. Recevez des demandes qualifiées chaque semaine.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-mobile-alt benefit-icon"></i>
-                    <h3>Gestion simplifiée</h3>
-                    <p>Gérez vos demandes, planifiez vos interventions et communiquez avec vos clients depuis une seule application.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-money-bill-wave benefit-icon"></i>
-                    <h3>Revenus supplémentaires</h3>
-                    <p>Augmentez vos revenus avec des missions régulières. Fixez vos tarifs et gérez votre planning en toute liberté.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-star benefit-icon"></i>
-                    <h3>Réputation en ligne</h3>
-                    <p>Construisez votre réputation grâce aux avis clients. Plus vous êtes bien noté, plus vous recevez de demandes.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-handshake benefit-icon"></i>
-                    <h3>Support dédié</h3>
-                    <p>Bénéficiez d'un accompagnement personnalisé et d'un support client réactif pour optimiser votre activité.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <i class="fas fa-chart-line benefit-icon"></i>
-                    <h3>Croissance assurée</h3>
-                    <p>Développez votre clientèle rapidement grâce à notre système de recommandations intelligent.</p>
-                </div>
-            </div>
+<!-- FAQ -->
+<section class="section">
+  <div class="container faq-wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Vos questions sur le programme prestataire.</h2>
+    </div>
+    <div class="faq-list" data-stagger=".05">
+      <details class="faq-item" open><summary>Combien coûte l'inscription sur Yëggal ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>L'inscription sur Yëggal est entièrement gratuite. Nous ne facturons aucun frais d'inscription, d'activation ou d'abonnement. Vous ne payez que lorsque vous réalisez des prestations via notre commission transparente.</p></div></details>
+      <details class="faq-item"><summary>Quel est le taux de commission de Yëggal ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>Notre commission est de 10 % sur chaque prestation réalisée. Ce taux vous permet de maximiser vos revenus tout en bénéficiant de nos services (promotion, support client, sécurisation des paiements).</p></div></details>
+      <details class="faq-item"><summary>Comment puis-je recevoir mes paiements ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>Les paiements sont effectués via mobile money (Orange Money, Free Money) ou virement bancaire selon votre préférence. Les paiements sont traités sous 48 h après validation de la prestation par le client.</p></div></details>
+      <details class="faq-item"><summary>Combien de temps prend la validation de mon profil ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>La validation de votre profil prend généralement entre 24 et 48 heures. Notre équipe vérifie vos informations avant de vous donner accès à la plateforme.</p></div></details>
+      <details class="faq-item"><summary>Puis-je fixer mes propres tarifs ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>Oui, vous êtes libre de fixer vos tarifs selon votre expertise et le marché.</p></div></details>
+      <details class="faq-item"><summary>Que se passe-t-il en cas de litige avec un client ?<i class="fa-solid fa-plus"></i></summary><div class="faq-a"><p>Notre équipe intervient rapidement en cas de litige, avec un processus de résolution transparent et équitable pour protéger les intérêts de toutes les parties.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-band reveal zoom">
+      <div>
+        <h2>Une question ? Contactez-nous.</h2>
+        <p>Notre équipe vous accompagne dans votre démarche d'inscription.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:yeggalservices@gmail.com?subject=Inscription%20prestataire" class="btn btn-light"><i class="fa-solid fa-envelope"></i>yeggalservices@gmail.com</a>
+        <a href="https://whatsapp.com/channel/0029VbBmTpsL2AU7tbY5cg06" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-whatsapp"></i>Chaîne WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Yëggal <b>Services</b></span></a>
+        <p class="footer-about">La plateforme qui connecte les clients et les professionnels, partout au Sénégal.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/yeggalservices/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://whatsapp.com/channel/0029VbBmTpsL2AU7tbY5cg06" target="_blank" rel="noopener" aria-label="Chaîne WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:yeggalservices@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="how-it-works animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title">Comment ça fonctionne ?</h2>
-            <p class="section-subtitle">4 étapes simples pour commencer à recevoir des clients</p>
-            <div class="steps">
-                <div class="step animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h3>Inscrivez-vous</h3>
-                    <p>Créez votre profil professionnel en quelques minutes. Ajoutez vos compétences, votre zone d'intervention et vos tarifs.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h3>Validation</h3>
-                    <p>Notre équipe vérifie vos documents et références. Vous recevez votre badge de confiance sous 48h.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h3>Recevez des demandes</h3>
-                    <p>Les clients vous contactent directement pour vos services. Négociez et planifiez vos interventions.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">4</div>
-                    <h3>Développez votre activité</h3>
-                    <p>Réalisez vos prestations, collectez des avis positifs et augmentez votre visibilité sur la plateforme.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirements -->
-    <section class="requirements animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title">Conditions requises</h2>
-            <p class="section-subtitle">Les critères simples pour rejoindre notre réseau de prestataires</p>
-            <div class="requirements-grid">
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-id-card requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Pièce d'identité</h4>
-                        <p>Carte d'identité nationale ou passeport en cours de validité pour vérifier votre identité.</p>
-                    </div>
-                </div>
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-certificate requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Compétences vérifiables</h4>
-                        <p>Justificatifs de formation, certificats ou références clients démontrant votre expertise.</p>
-                    </div>
-                </div>
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-map-marker-alt requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Zone Dakar</h4>
-                        <p>Résider dans la région de Dakar ou être capable d'intervenir dans cette zone géographique.</p>
-                    </div>
-                </div>
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-phone requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Contact disponible</h4>
-                        <p>Numéro de téléphone fonctionnel et adresse email pour communiquer avec les clients.</p>
-                    </div>
-                </div>
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-tools requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Matériel professionnel</h4>
-                        <p>Posséder les outils et équipements nécessaires pour réaliser vos prestations de qualité.</p>
-                    </div>
-                </div>
-                <div class="requirement-item animate-on-scroll">
-                    <i class="fas fa-shield-alt requirement-icon"></i>
-                    <div class="requirement-content">
-                        <h4>Engagement qualité</h4>
-                        <p>S'engager à respecter nos standards de qualité et notre charte de bonne conduite.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section class="success-stories animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title">Témoignages de nos prestataires</h2>
-            <p class="section-subtitle">Découvrez comment Yeggal a transformé leur activité</p>
-            <div class="stories-grid">
-                <div class="story-card animate-on-scroll">
-                    <div class="story-avatar">MS</div>
-                    <h4>Moussa Sarr</h4>
-                    <p class="profession">Plombier - Almadies</p>
-                    <p class="quote">"Depuis que j'ai rejoint Yeggal, j'ai triplé mon nombre de clients. L'application est facile à utiliser et les paiements sont sécurisés."</p>
-                    <div class="earning">
-                        <strong>+150% de revenus</strong> en 6 mois
-                    </div>
-                </div>
-                <div class="story-card animate-on-scroll">
-                    <div class="story-avatar">FB</div>
-                    <h4>Fatou Ba</h4>
-                    <p class="profession">Service ménage - Plateau</p>
-                    <p class="quote">"Yeggal m'a permis de développer mon activité de ménage. Je gère maintenant une équipe de 5 personnes grâce aux demandes régulières."</p>
-                    <div class="earning">
-                        <strong>+200% de chiffre d'affaires</strong> en 8 mois
-                    </div>
-                </div>
-                <div class="story-card animate-on-scroll">
-                    <div class="story-avatar">AD</div>
-                    <h4>Abdou Diop</h4>
-                    <p class="profession">Mécanicien - Guédiawaye</p>
-                    <p class="quote">"Les clients me trouvent facilement maintenant. Je n'ai plus besoin de chercher du travail, les demandes arrivent automatiquement."</p>
-                    <div class="earning">
-                        <strong>50+ clients réguliers</strong> acquis
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Form -->
-    <section class="registration animate-on-scroll" id="inscription">
-        <div class="container">
-            <h2 class="section-title">Rejoignez-nous maintenant</h2>
-            <p class="section-subtitle">Remplissez ce formulaire pour démarrer votre inscription</p>
-            <div class="form-container">
-                <form id="registration-form">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="prenom">Prénom *</label>
-                            <input type="text" id="prenom" name="prenom" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nom">Nom *</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone *</label>
-                            <input type="tel" id="telephone" name="telephone" required placeholder="+221 XX XXX XX XX">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="service">Catégorie de service *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Sélectionnez votre spécialité</option>
-                            <option value="plomberie">Plomberie</option>
-                            <option value="electricite">Électricité</option>
-                            <option value="menage">Ménage et nettoyage</option>
-                            <option value="reparation-phone">Réparation téléphone</option>
-                            <option value="mecanique">Mécanique</option>
-                            <option value="couture">Couture</option>
-                            <option value="peinture">Peinture</option>
-                            <option value="informatique">Informatique</option>
-                            <option value="jardinage">Jardinage</option>
-                            <option value="traiteur">Traiteur</option>
-                            <option value="photographie">Photographie</option>
-                            <option value="menuiserie">Menuiserie</option>
-                            <option value="autres">Autres</option>
-                        </select>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="experience">Années d'expérience *</label>
-                            <select id="experience" name="experience" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="1-2">1-2 ans</option>
-                                <option value="3-5">3-5 ans</option>
-                                <option value="6-10">6-10 ans</option>
-                                <option value="10+">Plus de 10 ans</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="zone">Zone d'intervention *</label>
-                            <select id="zone" name="zone" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="dakar-centre">Dakar Centre</option>
-                                <option value="plateau">Plateau</option>
-                                <option value="almadies">Almadies</option>
-                                <option value="ouakam">Ouakam</option>
-                                <option value="yoff">Yoff</option>
-                                <option value="ngor">Ngor</option>
-                                <option value="fann-point-e">Fann Point E</option>
-                                <option value="sacre-coeur">Sacré Cœur</option>
-                                <option value="medina">Médina</option>
-                                <option value="grand-dakar">Grand Dakar</option>
-                                <option value="hann-bel-air">Hann Bel Air</option>
-                                <option value="pikine">Pikine</option>
-                                <option value="guediawaye">Guédiawaye</option>
-                                <option value="toute-dakar">Toute la région de Dakar</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="description">Décrivez vos compétences et services *</label>
-                        <textarea id="description" name="description" required placeholder="Décrivez en détail vos compétences, vos spécialités, vos équipements..."></textarea>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">J'accepte les <a href="conditions.html" class="terms-link">conditions d'utilisation</a> et la <a href="confidentialite.html" class="terms-link">politique de confidentialité</a> de Yeggal</label>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Je souhaite recevoir les actualités et conseils de Yeggal par email</label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        Envoyer ma candidature
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title">Questions fréquentes</h2>
-            <p class="section-subtitle">Trouvez les réponses à vos questions sur notre programme prestataire</p>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Combien coûte l'inscription sur Yeggal ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>L'inscription sur Yeggal est entièrement gratuite. Nous ne facturons aucun frais d'inscription, d'activation ou d'abonnement. Vous ne payez que lorsque vous réalisez des prestations via notre commission transparente.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Quel est le taux de commission de Yeggal ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Notre commission est de 10% sur chaque prestation réalisée. Ce taux compétitif vous permet de maximiser vos revenus tout en bénéficiant de nos services (promotion, support client, sécurisation des paiements).</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Comment puis-je recevoir mes paiements ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Les paiements sont effectués via mobile money (Orange Money, Free Money) ou virement bancaire selon votre préférence. Les paiements sont traités sous 48h après validation de la prestation par le client.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Combien de temps prend la validation de mon profil ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>La validation de votre profil prend généralement entre 24 et 48 heures. Notre équipe vérifie vos documents, contacte vos références et valide vos compétences avant de vous donner accès à la plateforme.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Puis-je fixer mes propres tarifs ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui, vous êtes libre de fixer vos tarifs selon votre expertise et le marché. Nous fournissons des recommandations tarifaires basées sur les prix du marché pour vous aider à rester compétitif.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Que se passe-t-il en cas de litige avec un client ?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Notre équipe de médiation intervient rapidement en cas de litige. Nous disposons d'un système de résolution des conflits transparent et équitable pour protéger les intérêts de toutes les parties.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="contact-cta" id="contact">
-        <div class="container">
-            <h2>Une question ? Contactez-nous</h2>
-            <p>Notre équipe est là pour vous accompagner dans votre démarche d'inscription</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+221 77 XXX XX XX</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>yeggalservices@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp: +221 76 XXX XX XX</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Yeggal</h3>
-                    <p>La plateforme qui connecte les clients aux meilleurs prestataires de Dakar. Développez votre activité avec nous.</p>
-                    <div class="social-links">
-                        <a href="https://whatsapp.com/channel/0029VbBmTpsL2AU7tbY5cg06" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/yeggalservices/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        
-                        
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Prestataires</h3>
-                    <a href="#inscription">S'inscrire</a><br>
-                    <a href="prestataire.html">Guide prestataire</a><br>
-                    <a href="aide.html">Centre d'aide</a><br>
-                    <a href="aide.html">Formation</a><br>
-                    <a href="prestataire.html">Outils marketing</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <a href="aide.html">FAQ</a><br>
-                    <a href="mailto:yeggalservices@gmail.com">Contact</a><br>
-                    <a href="mailto:yeggalservices@gmail.com?subject=Signaler%20un%20probl%C3%A8me">Signaler un problème</a><br>
-                    <a href="prestataire.html">Charte qualité</a><br>
-                    <a href="blog.html">Communauté</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Légal</h3>
-                    <a href="conditions.html">Conditions prestataire</a><br>
-                    <a href="prestataire.html">Politique de commission</a><br>
-                    <a href="confidentialite.html">Protection données</a><br>
-                    <a href="aide.html">Assurance</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Yeggal. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        function toggleMenu() {
-            // Add mobile menu functionality here
-            console.log('Mobile menu toggled');
-        }
-
-        // FAQ Toggle
-        function toggleFAQ(button) {
-            const faqItem = button.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
-        }
-
-        // Form submission
-        document.getElementById('registration-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Basic validation
-            if (!data.terms) {
-                alert('Vous devez accepter les conditions d\'utilisation pour continuer.');
-                return;
-            }
-            
-            // Simulate form submission
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Merci pour votre candidature ! Nous vous contacterons sous 48h pour la suite du processus.');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            animatedElements.forEach(el => observer.observe(el));
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Phone number formatting
-        document.getElementById('telephone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (!value.startsWith('221')) {
-                    value = '221' + value;
-                }
-                value = value.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '+$1 $2 $3 $4 $5');
-            }
-            e.target.value = value;
-        });
-
-           // Service category "autres" handler
-        document.getElementById('service').addEventListener('change', function(e) {
-            if (this.value === 'autres') {
-                const otherService = prompt('Précisez votre service :');
-                if (otherService) {
-                    // Create new option
-                    const option = new Option(otherService, `autre-${otherService}`);
-                    this.add(option);
-                    this.value = option.value;
-                } else {
-                    this.value = ''; // Reset if no input
-                }
-            }
-        });
-
-        // Character counter for description
-        document.getElementById('description').addEventListener('input', function(e) {
-            const maxLength = 500;
-            const remaining = maxLength - this.value.length;
-            
-            if (!this.nextElementSibling?.classList.contains('char-counter')) {
-                const counter = document.createElement('div');
-                counter.classList.add('char-counter');
-                counter.style.fontSize = '0.8rem';
-                counter.style.color = '#666';
-                counter.style.textAlign = 'right';
-                this.parentNode.appendChild(counter);
-            }
-            
-            this.nextElementSibling.textContent = `${remaining} caractères restants`;
-            
-            if (remaining < 50) {
-                this.nextElementSibling.style.color = '#ff6b6b';
-            } else {
-                this.nextElementSibling.style.color = '#666';
-            }
-        });
-
-        
-
-    </script>
+      </div>
+      <div>
+        <h4>Clients</h4>
+        <ul>
+          <li><a href="index.html#services">Trouver un professionnel</a></li>
+          <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="download.html">Télécharger l'application</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Professionnels</h4>
+        <ul>
+          <li><a href="prestataire.html">Devenir prestataire</a></li>
+          <li><a href="prestataire.html#avantages">Avantages</a></li>
+          <li><a href="aide.html">Centre d'aide</a></li>
+          <li><a href="blog.html">Actualités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Yëggal</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="mailto:yeggalservices@gmail.com">Contact</a></li>
+          <li><a href="gestion_compte.html">Gérer mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Yëggal Services. Tous droits réservés.</span>
+      <nav aria-label="Liens légaux"><a href="conditions.html">Conditions d'utilisation</a><a href="confidentialite.html">Confidentialité</a></nav>
+    </div>
+  </div>
+</footer>
+<button class="to-top" type="button" aria-label="Revenir en haut"><i class="fa-solid fa-arrow-up"></i></button>
+<script>
+  // FAQ : une seule question ouverte a la fois
+  document.querySelectorAll('.faq-item').forEach(function (item, _, all) {
+    item.addEventListener('toggle', function () {
+      if (item.open) document.querySelectorAll('.faq-item').forEach(function (o) { if (o !== item) o.open = false; });
+    });
+  });
+</script>
+<script src="js/site.js"></script>
 </body>
 </html>
