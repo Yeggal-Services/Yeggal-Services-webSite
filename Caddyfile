@@ -1,0 +1,28 @@
+{
+	admin off
+	auto_https off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+
+	# Fichiers de verification des liens universels (iOS) et App Links (Android)
+	@aasa path /.well-known/apple-app-site-association /apple-app-site-association
+	rewrite /apple-app-site-association /.well-known/apple-app-site-association
+	header @aasa Content-Type application/json
+	header /.well-known/assetlinks.json Content-Type application/json
+
+	@private path /*.md /_config.yml /CNAME /Caddyfile /Dockerfile /.dockerignore
+	respond @private 404
+
+	# Liens partages par l'app : /profile/<id> et /local/<id>
+	@profile path_regexp ^/profile/[^/]+$
+	rewrite @profile /profile/index.html
+	@local path_regexp ^/local/[^/]+$
+	rewrite @local /local/index.html
+
+	# URL sans extension comme GitHub Pages (/download -> download.html)
+	try_files {path} {path}.html {path}/index.html
+	file_server
+}
